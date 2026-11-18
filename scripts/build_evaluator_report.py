@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.pagesizes import A4
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, Image
 from pypdf import PdfReader, PdfWriter
 
 
@@ -39,6 +39,7 @@ def main():
     for key in ['created_at_utc', 'git_commit', 'model_sha256', 'pipeline_sha256', 'configuration_sha256']:
         text(f'{key}: {freeze[key]}')
     text('Feature/candidate/decoder and alignment configurations are recorded in results/evaluator/freeze.json. The selected artifact is artifacts/final/selected.joblib. The freeze was made before reserved-file inspection.')
+    text('Trip-ID overlap with original partitions: ' + str(inspection.get('partition_overlap', 'See inspection evidence')))
     text(f"Discovered {inspection['trip_count']} actual trips. Valid inputs: {sum(r['input_status']=='valid' for r in inspection['trips'])}. References: {sum(r.get('reference_status')=='valid' for r in inspection['trips'])} valid, {sum(r.get('reference_status')=='missing' for r in inspection['trips'])} missing, {sum(r.get('reference_status')=='invalid' for r in inspection['trips'])} invalid. Originals unchanged: {result['originals_unchanged']}. Frozen pipeline unchanged: {result['pipeline_unchanged']}.")
     text(result['official_scoring_procedure'])
     text('Scoring: agreement with provisional derived labels', 'Heading2')
@@ -66,6 +67,17 @@ def main():
     text('On Laptop 2: bash start.sh --ui-only (macOS), or start.bat --ui-only (Windows). Open http://localhost:8001 and set Connection settings to http://LAPTOP1_LAN_IP:8000. A local ignored .pathsnap-local.json selects the reserved root for normal starts on the evaluation machine.')
     text('Remaining limitations', 'Heading2')
     text('Reserved trips use the offline network map so their locations are not requested from external tile servers. A second physical laptop/LAN and receiving-terminal screenshot must still be demonstrated at the event. Missing/invalid references retain predictions and suppress accuracy. Development and reserved scores have separate evidence files. Team review, submission and disclosure remain the team\'s responsibility.')
+    successful = next((row for row in ui['trips'] if row['passed']), None)
+    if successful:
+        story.append(PageBreak())
+        text('Verified reserved evaluator interface (private)', 'Heading1')
+        screenshot = evidence / 'ui' / (successful['trip_id'] + '.png')
+        from PIL import Image as PILImage
+        with PILImage.open(screenshot) as picture:
+            width, height = picture.size
+        display_width = min(500, 630 * width / height)
+        story.append(Image(str(screenshot), width=display_width, height=display_width * height / width))
+        text('Actual local UI-triggered inference. Reference labels and reference geometry are absent. Offline network mode prevents external tile requests. All discovered trips were tested; this image is one representative capture.')
     appendix = out / 'evaluator_appendix.pdf'
     SimpleDocTemplate(str(appendix), pagesize=A4, rightMargin=45, leftMargin=45, topMargin=45, bottomMargin=45).build(story)
     writer = PdfWriter()

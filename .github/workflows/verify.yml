@@ -53,3 +53,16 @@ jobs:
           for port in (18080, 18081):
               with socket.socket() as connection:
                   assert connection.connect_ex(('127.0.0.1', port)) != 0, f'Port {port} leaked'
+      - name: Reserved-root argument with a public one-trip fixture
+        shell: python
+        run: |
+          import os, pathlib, shutil, socket, subprocess, tempfile
+          # Only already-public development data is used in CI. Never upload reserved inputs.
+          wrapper = ['cmd', '/d', '/c', 'start.bat'] if os.name == 'nt' else ['bash', 'start.sh']
+          with tempfile.TemporaryDirectory(prefix='PathSnap fixture with spaces ') as directory:
+              source = pathlib.Path('Student folder/student_test/00000000')
+              shutil.copytree(source, pathlib.Path(directory) / source.name)
+              subprocess.run(wrapper + ['--evaluator-root', directory, '--smoke-test', '--skip-install', '--api-port', '18082', '--ui-port', '18083'], check=True, env=dict(os.environ, PATHSNAP_NO_PAUSE='1'))
+          for port in (18082, 18083):
+              with socket.socket() as connection:
+                  assert connection.connect_ex(('127.0.0.1', port)) != 0, f'Port {port} leaked'
