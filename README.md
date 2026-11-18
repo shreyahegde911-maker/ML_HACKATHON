@@ -6,7 +6,34 @@ FastAPI, a separate responsive UI, Folium maps and a technical report.
 
 ## Start the presentation
 
-Use Python 3.12. From the repository root:
+Install Python 3.12 once. Then use the launcher from the repository root:
+
+**macOS/Linux:**
+
+```sh
+bash start.sh
+```
+
+**Windows:** double-click `start.bat`, or run:
+
+```bat
+start.bat
+```
+
+The launcher creates `.venv` and installs pinned dependencies if needed, starts
+both API and UI, waits for readiness, and opens the browser. First-time setup
+needs internet; later starts reuse installed dependencies and trained models.
+Keep the window open; **Ctrl+C** stops only processes started by that launcher.
+Existing healthy PathSnap services are reused. A conflicting app on either port
+produces a clear error without stopping it. Paths containing spaces are supported.
+
+For two laptops, use `bash start.sh --api-only` / `start.bat --api-only` on
+Laptop 1, and `bash start.sh --ui-only` / `start.bat --ui-only` on Laptop 2.
+UI-only mode needs no model, data or ML dependencies; enter Laptop 1's API
+address in the UI. `--no-browser`, `--check`, `--skip-install`, `--api-port`
+and `--ui-port` are also available (`--help` lists them).
+
+For manual startup instead:
 
 ```sh
 python -m venv .venv

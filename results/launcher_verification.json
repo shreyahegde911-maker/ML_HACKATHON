@@ -1,0 +1,20 @@
+{
+  "unit_tests": 34,
+  "unit_test_result": "passed",
+  "shell_syntax": "bash -n start.sh passed",
+  "setup_checks": [
+    "default existing environment",
+    "UI-only without model dependencies",
+    "project path containing spaces and &; different working directory"
+  ],
+  "real_launch": {
+    "api_port": 18080,
+    "ui_port": 18081,
+    "browser_custom_api_address": "http://localhost:18080",
+    "prediction_trip": "00000000",
+    "observations": 2503,
+    "result": "passed"
+  },
+  "shutdown": "Ctrl+C stopped ports 18080/18081; original services on 8000/8001 stayed healthy",
+  "windows": "CRLF batch wrapper reviewed; Windows process-group branches unit-tested. Native Windows execution was not available."
+}

@@ -3,3 +3,5 @@
 *.sqlite3 binary
 *.gz binary
 *.pdf binary
+*.sh text eol=lf
+*.bat text eol=crlf

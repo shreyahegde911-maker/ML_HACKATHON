@@ -17,6 +17,29 @@ session. Perform the two-device connectivity check below at the event.
 
 ## Laptop 1: API and trained model
 
+### Easy launch (macOS and Windows)
+
+Install Python 3.12 once. On macOS/Linux run `bash start.sh`; on Windows
+double-click `start.bat`. Both services start and the browser opens automatically.
+The first run creates `.venv` and installs pinned dependencies, so it needs
+internet. Later starts use the existing environment and saved model.
+
+For the two-laptop presentation:
+
+| Machine | macOS/Linux | Windows |
+| --- | --- | --- |
+| Laptop 1 (API/model) | `bash start.sh --api-only` | `start.bat --api-only` |
+| Laptop 2 (UI) | `bash start.sh --ui-only` | `start.bat --ui-only` |
+
+On Laptop 2, enter `http://LAPTOP1_LAN_IP:8000` and click Connect. Keep launcher
+windows open. Ctrl+C stops launcher-owned processes, while pre-existing healthy
+services are left running. `--no-browser` suppresses browser opening;
+`--check --skip-install` checks an existing setup without starting anything.
+Custom ports are available with `--api-port` and `--ui-port`. The browser URL
+passes the custom API address to the UI automatically.
+
+### Manual startup
+
 Use Python 3.12. From a clone of the repository:
 
 ```sh
