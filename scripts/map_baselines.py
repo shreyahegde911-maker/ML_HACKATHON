@@ -64,7 +64,8 @@ def main():
     Classifier-only segment matches; no HMM reconstruction.<br>Metrics use provisional derived reference labels.</div>'''
     map_.get_root().html.add_child(folium.Element(legend))
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    map_.save(str(args.output))
+    rendered = map_.get_root().render()
+    args.output.write_text("\n".join(line.rstrip() for line in rendered.splitlines()) + "\n")
     print(f"Saved {args.output}: {len(obs)} GPS observations, development trip {tid}")
 
 
