@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "url": "https://github.com/shreyahegde911-maker/ML_HACKATHON/actions/runs/44285820428",
+  "head_sha": "07f605e20acc6f21c92710ea754adf221754b0e7",
+  "scope": "Native 40-test suite, fitted five-model audit, platform wrapper check, real API/UI startup, prediction and owned-process shutdown.",
+  "jobs": [
+    {
+      "id": 134738114702,
+      "name": "verify (macos-latest)",
+      "conclusion": "success"
+    },
+    {
+      "id": 134738115040,
+      "name": "verify (windows-latest)",
+      "conclusion": "success"
+    }
+  ]
+}

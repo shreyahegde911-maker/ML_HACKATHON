@@ -384,7 +384,7 @@ def main():
     page()
     heading("8. Reproducibility, limitations and presentation")
     text(
-        "Start the API with python scripts/serve.py --host 0.0.0.0. Start the UI on the other laptop with python -m http.server 8001 --directory ui, open its local address, and enter http://LAPTOP1_LAN_IP:8000. Installation, regeneration, reserved-folder layout, checks and demo order are in docs/FINAL_PRESENTATION.md."
+        "Start the API with python scripts/serve.py --host 0.0.0.0. Start the UI on the other laptop with python scripts/serve_ui.py --port 8001, open its local address, and enter http://LAPTOP1_LAN_IP:8000. Installation, regeneration, reserved-folder layout, checks and demo order are in docs/FINAL_PRESENTATION.md."
     )
     text(
         "One-command launch: bash start.sh on macOS/Linux; start.bat on Windows. Use --api-only on Laptop 1 and --ui-only on Laptop 2. The --smoke-test option starts services, verifies an actual prediction and stops only its own processes. Native Windows/macOS checks are configured in .github/workflows/verify.yml; the corresponding run results are separate verification evidence."

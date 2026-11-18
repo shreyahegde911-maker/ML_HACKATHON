@@ -31,4 +31,4 @@ python -m unittest discover -s tests -v
 python scripts/audit_deliverables.py
 ```
 
-Cross-platform checks are configured in .github/workflows/verify.yml. A workflow configuration alone is not evidence of a passing native Windows run; inspect the corresponding GitHub Actions jobs.
+Native Windows and macOS checks passed: [GitHub Actions](https://github.com/shreyahegde911-maker/ML_HACKATHON/actions/runs/44285820428). The receipt in results/final/cross_platform_ci.json identifies the tested source commit and jobs. Both wrappers started services, performed an actual prediction and stopped their own processes.

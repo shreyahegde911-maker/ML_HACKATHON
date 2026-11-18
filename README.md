@@ -45,7 +45,7 @@ python scripts/serve.py --host 0.0.0.0 --port 8000
 In another terminal (or on Laptop 2):
 
 ```sh
-python -m http.server 8001 --directory ui
+python scripts/serve_ui.py --port 8001
 ```
 
 Open **http://localhost:8001**. For two laptops, enter

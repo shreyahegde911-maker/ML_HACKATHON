@@ -153,6 +153,8 @@ def audit():
         "A second physical laptop/LAN and its receiving-terminal screenshot must be demonstrated at the event.",
         "The team must review and submit its work, and be ready to explain/disclose AI assistance as required by the event policy.",
     ]
+    ci_path = ROOT / "results/final/cross_platform_ci.json"
+    ci = json.loads(ci_path.read_text()) if ci_path.exists() else None
     return {
         "status": "passed" if not errors else "failed",
         "errors": errors,
@@ -160,6 +162,7 @@ def audit():
         "models": model_rows,
         "pdf_pages": len(reader.pages),
         "completed_trials": int(trials.state.eq("COMPLETE").sum()),
+        "cross_platform_ci": ci,
         "external_pending": pending,
     }
 
@@ -205,7 +208,14 @@ def main():
             "python scripts/audit_deliverables.py",
             "```",
             "",
-            "Cross-platform checks are configured in .github/workflows/verify.yml. A workflow configuration alone is not evidence of a passing native Windows run; inspect the corresponding GitHub Actions jobs.",
+            (
+                "Native Windows and macOS checks passed: [GitHub Actions]("
+                + result["cross_platform_ci"]["url"]
+                + "). The receipt in results/final/cross_platform_ci.json identifies the tested source commit and jobs. Both wrappers started services, performed an actual prediction and stopped their own processes."
+                if result["cross_platform_ci"]
+                and result["cross_platform_ci"].get("status") == "passed"
+                else "Cross-platform checks are configured in .github/workflows/verify.yml; inspect the corresponding GitHub Actions jobs for native results."
+            ),
             "",
         ]
         (ROOT / "docs/DELIVERABLE_AUDIT.md").write_text("\n".join(lines))

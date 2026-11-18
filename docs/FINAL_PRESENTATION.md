@@ -57,11 +57,11 @@ at `http://localhost:8000/docs`; health at `/health`; trip catalog at `/trips`.
 
 ## Laptop 2: evaluator UI
 
-Only the UI file and Python are needed; model/data/reference files stay on
+Only the UI files, scripts/serve_ui.py and Python are needed; model/data/reference files stay on
 Laptop 1. From the repository root on Laptop 2:
 
 ```sh
-python -m http.server 8001 --directory ui
+python scripts/serve_ui.py --port 8001
 ```
 
 Open `http://localhost:8001`. Enter `http://LAPTOP1_LAN_IP:8000` in the API address
