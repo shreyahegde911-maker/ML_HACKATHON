@@ -1,3 +1,3 @@
-# Model artifacts
+# Trained artifacts
 
-Store models and inference artifacts produced by actual training runs here, subject to repository size constraints. No trained artifacts are present yet.
+final/ contains all five final comparison models, the Bayesian-tuned model and selected inference bundle. models/ retains the earlier two-model checkpoint. features/ contains shared compressed candidate tables. Model provenance and settings are recorded under results/final.

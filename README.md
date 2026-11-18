@@ -1,32 +1,10 @@
 # PathSnap
 
-PathSnap reconstructs vehicle routes from noisy GPS observations and a road
-network. The existing module layout supports data processing, candidate
-generation, classifiers, HMM/Viterbi decoding, evaluation, FastAPI and a separate
-evaluator UI.
+End-to-end GPS map matching: strict readers, geographic EDA, road candidates,
+five trained classifiers, Bayesian optimisation, directed graph HMM/Viterbi,
+FastAPI, a separate responsive UI, Folium maps and a technical report.
 
-## Implemented: Parts 1 through 4 (two-model baseline)
-
-- Strict trip readers preserving original observation/node/arc IDs and order.
-- Validation of shapes, coordinates, ID bounds, timestamps and route breaks.
-- Shared per-trip WGS84 UTM coordinates in metres for observations and roads.
-- Prediction-data loading that never reads reference routes.
-- Separate ordered **provisional** reference alignment with uncertainty flags.
-- Seed-42 whole-trip split: 64 training, 16 validation, 10 student-development.
-- Runnable inspection script, source-invariance checks and focused tests.
-
-The candidate/feature pipeline and two classifiers are implemented and run:
-Logistic Regression and Random Forest. Actual shared feature tables, trained
-artifacts, trip-aware three-fold CV, validation/student-development comparisons,
-predictions, plots and a Folium comparison map are included. Scores measure
-agreement with provisional derived references, not official pointwise accuracy.
-See [the baseline workflow](docs/two_model_baseline.md) and
-[recorded results](results/baselines/README.md).
-
-The full assignment still requires at least five models, Bayesian tuning,
-production HMM/Viterbi experiments, the API/UI and final report.
-
-## Setup and execution
+## Start the presentation
 
 Use Python 3.12. From the repository root:
 
@@ -34,47 +12,90 @@ Use Python 3.12. From the repository root:
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+python scripts/serve.py --host 0.0.0.0 --port 8000
+```
+
+In another terminal (or on Laptop 2):
+
+```sh
+python -m http.server 8001 --directory ui
+```
+
+Open **http://localhost:8001**. For two laptops, enter
+`http://LAPTOP1_LAN_IP:8000` in the UI API field. The model and data stay on
+Laptop 1. The saved final model is included; retraining is not required.
+The API also serves the UI at http://localhost:8000 for a one-process demo.
+
+The default catalog is the ten supplied **student-development** trips, visibly
+labelled in the UI. Reserved evaluator files were not supplied. Set
+`PATHSNAP_EVALUATOR_ROOT` on the backend to switch to reserved trips. References
+are read only by server evaluation after prediction, and never returned to the
+UI. The physical two-laptop LAN check must be performed at the event.
+
+## Recorded final results
+
+Five baselines were compared using three-fold trip-grouped CV across the
+original 80 training trips. One trip has no eligible derived labels, leaving
+79 effective supervised-fit trips and 800,911 labelled candidate rows.
+The ten student-development trips stay outside fitting.
+
+| Model | Training CV candidate Macro F1 | Student-development Top-1 |
+| --- | ---: | ---: |
+| Logistic Regression | 0.7902 | 88.78% |
+| Random Forest | 0.8280 | 88.87% |
+| Decision Tree | 0.8140 | 88.10% |
+| Histogram Gradient Boosting | **0.8510** | **89.13%** |
+| Gaussian Naive Bayes | 0.8360 | 87.77% |
+| Bayesian-tuned Histogram Gradient Boosting | 0.8505 | 89.06% |
+
+Ten Optuna TPE trials used a fixed training-only sample with whole-trip folds;
+final tuned CV was recomputed on all labelled training rows. Tuning did not
+improve full-data CV, and no tuning gain is claimed.
+
+The tuned classifier + HMM achieved **96.31% Top-1** versus 89.06% classifier-only,
+and **97.99% direct-step continuity** versus 89.21%, on student-development trips.
+Decoder beta was selected on three of those development trips. These are
+**development agreement scores against provisional derived references**, not
+untouched evaluator accuracy. Alignment coverage is 58.34%; flagged references
+are excluded and candidate misses remain in the Top-1 denominator.
+
+## Presentation artifacts
+
+- [Consolidated report](output/pdf/PathSnap_Technical_Report.pdf)
+- [Deployment and viva runbook](docs/FINAL_PRESENTATION.md)
+- [Comparison and timings](results/final/comparison.csv)
+- [Decoder comparison](results/final/decoder_summary.json)
+- [Interactive Folium map](results/final/final_folium_map.html)
+- [Actual UI screenshot](results/final/ui_desktop.png)
+- [All-ten-trip HTTP checks](results/final/api_verification.json)
+- [Browser verification](results/final/browser_verification.json)
+- [Test record](results/final/test_results.txt)
+
+The UI map works offline. Folium's Leaflet assets/tiles need network access;
+an actual rendered screenshot is included for offline presentation.
+
+## Verification and reproduction
+
+```sh
 python -m unittest discover -s tests -v
-python scripts/inspect_data.py --data-root "Student folder" --partition train --trip 00000001 --align --output-dir results/part1_example
-python scripts/inspect_data.py --data-root "Student folder" --partition all --align --output-dir results/part1
-python scripts/train_baselines.py --features artifacts/features --jobs 2
-python scripts/map_baselines.py
-python scripts/predict_baseline.py --model random_forest --partition student_test --trip-id 00000000
+python scripts/verify_api.py
 ```
 
-Inspection outputs are in `results/part1/`; the shared trip manifest is
-`results/part1/split_manifest.json`. Generated reference-label CSVs are in
-`data/derived/reference_labels/{partition}/{trip_id}.csv` and are gitignored.
-Run `scripts/inspect_data.py --partition all --align` to regenerate them.
+See the runbook for full regeneration, browser checks and reserved-folder setup.
+The earlier two-model checkpoint remains under results/baselines and
+docs/two_model_baseline.md; results/final is the final comparison.
 
-## Part 2 handoff
+## Data and architecture
 
-```python
-from pathsnap.data import load_trip
+Original files in Student folder/ are unchanged: track holds GPS/time; nodes
+defines road coordinates; arcs defines directed segments; route is an ordered
+reference sequence. GPS/reference rows cannot be joined directly.
+[Data assumptions](docs/data_assumptions.md) explain projection and label flags.
+Only distance, heading difference, speed and elapsed time enter the models.
+IDs, references and statuses are metadata. Candidate generation and prediction
+never read routes. HMM uses classifier scores and plausible directed shortest
+paths; gaps/disconnections start separate runs instead of invented bridges.
 
-trip = load_trip("Student folder", "train", "00000001")
-observations, nodes, arcs = trip["observations"], trip["nodes"], trip["arcs"]
-```
-
-Set `PYTHONPATH=src` or add `src` to Python's import path. The exact DataFrame
-schemas, reference-alignment method, status filtering, partition mapping and
-limitations are documented in [the data notes](docs/data_assumptions.md).
-
-## Data handling
-
-Use the original supplied files in `Student folder/` without modification.
-`.track` rows are GPS observations; `.nodes` rows define node IDs; `.arcs` rows
-define arc IDs; `.route` is an ordered reference sequence, not one label per GPS
-observation. Only alignment status `aligned` is eligible provisional supervision.
-Keep references out of candidate generation and prediction inputs. Keep reserved
-evaluator data out of development and evaluator ground truth server-side.
-
-## Layout
-
-- `src/pathsnap/`: reusable processing, candidates, features, models, decoding,
-  evaluation, tuning, visualisation and API modules.
-- `scripts/`, `configs/`: runnable entry points and reproducible settings.
-- `notebooks/`, `docs/`, `data/`: exploration and data/implementation notes.
-- `artifacts/`, `results/`: actual trained artifacts and recorded run outputs.
-- `tests/`, `ui/`: checks and the separate evaluator interface.
-- `delivarables/`: original assignment PDFs (existing repository spelling).
+Source: src/pathsnap. Commands: scripts. Interface: ui. Artifacts: artifacts/final.
+Results: results/final. Original assignment PDFs: delivarables. AI assistance is
+disclosed in the report; the team must review and defend the implementation.

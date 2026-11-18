@@ -8,7 +8,12 @@ import unittest
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
-from pathsnap.data import load_trip, load_reference_route, align_reference_route, create_split_manifest
+from pathsnap.data import (
+    load_trip,
+    load_reference_route,
+    align_reference_route,
+    create_split_manifest,
+)
 
 
 class DataTests(unittest.TestCase):
@@ -32,7 +37,10 @@ class DataTests(unittest.TestCase):
         self.assertEqual(trip["observations"]["observation_id"].tolist(), [0, 1, 2])
         self.assertEqual(trip["arcs"]["arc_id"].tolist(), [0, 1])
         self.assertEqual(trip["crs"]["units"], "metre")
-        length = np.linalg.norm(trip["nodes"].loc[1, ["x_m", "y_m"]].to_numpy(dtype=float) - trip["nodes"].loc[0, ["x_m", "y_m"]].to_numpy(dtype=float))
+        length = np.linalg.norm(
+            trip["nodes"].loc[1, ["x_m", "y_m"]].to_numpy(dtype=float)
+            - trip["nodes"].loc[0, ["x_m", "y_m"]].to_numpy(dtype=float)
+        )
         self.assertTrue(70 < length < 73)
 
     def test_source_order_and_time_anomalies_retained(self):
@@ -75,7 +83,9 @@ class DataTests(unittest.TestCase):
         self.write("track", "8.001 50 1\n8.001 50 100\n")
         trip = load_trip(self.root, "train", 1)
         labels = align_reference_route(trip, ref)
-        self.assertTrue(labels["alignment_status"].str.contains("ambiguous_geometry").all())
+        self.assertTrue(
+            labels["alignment_status"].str.contains("ambiguous_geometry").all()
+        )
         self.assertTrue(labels["alignment_status"].str.contains("gap_boundary").all())
 
     def test_repeated_occurrences_and_discontinuities_flagged(self):
@@ -84,7 +94,11 @@ class DataTests(unittest.TestCase):
         ref = load_reference_route(self.root, "train", 1, arcs=trip["arcs"])
         labels = align_reference_route(trip, ref)
         repeated = labels["reference_arc_id"] == 0
-        self.assertTrue(labels.loc[repeated, "alignment_status"].str.contains("repeated_arc_occurrence").all())
+        self.assertTrue(
+            labels.loc[repeated, "alignment_status"]
+            .str.contains("repeated_arc_occurrence")
+            .all()
+        )
         self.assertTrue((np.diff(labels["route_position"]) >= 0).all())
 
     def test_distant_and_zero_length_labels_are_ineligible(self):
@@ -112,10 +126,18 @@ class DataTests(unittest.TestCase):
         for i in range(80, 90):
             (self.root / "student_test" / f"{i:08}").mkdir(parents=True)
         first = create_split_manifest(self.root)
-        self.assertEqual(json.dumps(first), json.dumps(create_split_manifest(self.root)))
-        self.assertEqual([len(first[k]) for k in ("train", "validation", "student_test")], [64, 16, 10])
+        self.assertEqual(
+            json.dumps(first), json.dumps(create_split_manifest(self.root))
+        )
+        self.assertEqual(
+            [len(first[k]) for k in ("train", "validation", "student_test")],
+            [64, 16, 10],
+        )
         self.assertFalse(set(first["train"]) & set(first["validation"]))
-        self.assertFalse((set(first["train"]) | set(first["validation"])) & set(first["student_test"]))
+        self.assertFalse(
+            (set(first["train"]) | set(first["validation"]))
+            & set(first["student_test"])
+        )
 
 
 if __name__ == "__main__":

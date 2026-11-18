@@ -1,3 +1,3 @@
-# API
+# Model API
 
-Reserved for the FastAPI service that will load the trained artifacts, accept evaluator trip requests, run inference, and return route results. Keep reference labels server-side.
+FastAPI implements /health, /trips and POST /predict. Prediction uses the saved classifier and directed graph HMM. References are read only afterwards for server-only aggregate evaluation. UI payloads exclude reference IDs and geometry. See docs/FINAL_PRESENTATION.md for deployment and verification.

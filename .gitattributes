@@ -1,0 +1,5 @@
+*.track text
+*.joblib binary
+*.sqlite3 binary
+*.gz binary
+*.pdf binary

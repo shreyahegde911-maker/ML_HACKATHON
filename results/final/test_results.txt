@@ -1,0 +1,31 @@
+/Users/shreyaskm/Documents/ML/hackathon/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_catalog_and_health (test_api.ApiTests.test_catalog_and_health) ... ok
+test_external_evaluator_root_predicts_without_reference (test_api.ApiTests.test_external_evaluator_root_predicts_without_reference) ... ok
+test_separate_ui_origin (test_api.ApiTests.test_separate_ui_origin) ... ok
+test_unknown_and_invalid_trips (test_api.ApiTests.test_unknown_and_invalid_trips) ... ok
+test_distant_and_zero_length_labels_are_ineligible (test_data.DataTests.test_distant_and_zero_length_labels_are_ineligible) ... ok
+test_loader_requires_no_reference_and_preserves_ids (test_data.DataTests.test_loader_requires_no_reference_and_preserves_ids) ... ok
+test_malformed_shapes_coordinates_and_ids_rejected (test_data.DataTests.test_malformed_shapes_coordinates_and_ids_rejected) ... ok
+test_manifest_reproducible_disjoint_and_complete (test_data.DataTests.test_manifest_reproducible_disjoint_and_complete) ... ok
+test_ordered_alignment_and_ambiguity (test_data.DataTests.test_ordered_alignment_and_ambiguity) ... ok
+test_reference_ids_rejected_and_occurrences_preserved (test_data.DataTests.test_reference_ids_rejected_and_occurrences_preserved) ... ok
+test_repeated_occurrences_and_discontinuities_flagged (test_data.DataTests.test_repeated_occurrences_and_discontinuities_flagged) ... ok
+test_reserved_partition_and_path_traversal_rejected (test_data.DataTests.test_reserved_partition_and_path_traversal_rejected) ... ok
+test_source_order_and_time_anomalies_retained (test_data.DataTests.test_source_order_and_time_anomalies_retained) ... ok
+test_directed_connectors_and_unreachable_reverse (test_decoder.DecoderTests.test_directed_connectors_and_unreachable_reverse) ... ok
+test_gap_starts_new_route_instead_of_false_bridge (test_decoder.DecoderTests.test_gap_starts_new_route_instead_of_false_bridge) ... ok
+test_no_candidates_preserves_missing_prediction (test_decoder.DecoderTests.test_no_candidates_preserves_missing_prediction) ... ok
+test_viterbi_rejects_disconnected_pointwise_jump (test_decoder.DecoderTests.test_viterbi_rejects_disconnected_pointwise_jump) ... ok
+test_candidate_misses_remain_in_top1_denominator (test_evaluation.EvaluationTests.test_candidate_misses_remain_in_top1_denominator) ... ok
+test_prediction_handles_no_candidates (test_evaluation.EvaluationTests.test_prediction_handles_no_candidates) ... ok
+test_backwards_timestamp_keeps_source_sequence (test_features.FeatureTests.test_backwards_timestamp_keeps_source_sequence) ... ok
+test_long_segment_fallback_and_integer_ids (test_features.FeatureTests.test_long_segment_fallback_and_integer_ids) ... ok
+test_missing_reference_arc_is_not_inserted (test_features.FeatureTests.test_missing_reference_arc_is_not_inserted) ... ok
+test_no_candidates_retains_all_reference_misses (test_features.FeatureTests.test_no_candidates_retains_all_reference_misses) ... ok
+test_unreliable_labels_stay_null_and_candidates_unchanged (test_features.FeatureTests.test_unreliable_labels_stay_null_and_candidates_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.170s
+
+OK

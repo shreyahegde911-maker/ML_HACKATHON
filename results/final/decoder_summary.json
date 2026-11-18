@@ -1,0 +1,18 @@
+[
+  {
+    "method": "classifier",
+    "top1_accuracy": 0.8905788673168114,
+    "direct_step_continuity": 0.89210361395446,
+    "arc_set_f1_mean": 0.8945025880423394,
+    "eligible_observations": 11177,
+    "reset_count": 0
+  },
+  {
+    "method": "hmm",
+    "top1_accuracy": 0.9631385881721393,
+    "direct_step_continuity": 0.9799456862335492,
+    "arc_set_f1_mean": 0.9785928840760508,
+    "eligible_observations": 11177,
+    "reset_count": 16
+  }
+]

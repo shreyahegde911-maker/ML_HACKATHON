@@ -11,12 +11,23 @@ from pathsnap.features.engineering import FEATURES
 
 def make_models(seed=42, jobs=2):
     return {
-        "logistic_regression": make_pipeline(StandardScaler(), LogisticRegression(
-            C=1.0, class_weight="balanced", max_iter=500, random_state=seed)),
+        "logistic_regression": make_pipeline(
+            StandardScaler(),
+            LogisticRegression(
+                C=1.0, class_weight="balanced", max_iter=500, random_state=seed
+            ),
+        ),
         "random_forest": RandomForestClassifier(
-            n_estimators=80, max_depth=14, min_samples_leaf=20,
-            max_features="sqrt", bootstrap=True, max_samples=0.75,
-            class_weight="balanced_subsample", random_state=seed, n_jobs=jobs),
+            n_estimators=80,
+            max_depth=14,
+            min_samples_leaf=20,
+            max_features="sqrt",
+            bootstrap=True,
+            max_samples=0.75,
+            class_weight="balanced_subsample",
+            random_state=seed,
+            n_jobs=jobs,
+        ),
     }
 
 

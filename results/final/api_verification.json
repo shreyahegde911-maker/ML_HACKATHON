@@ -1,0 +1,234 @@
+{
+  "health": {
+    "status": "ok",
+    "model_ready": true,
+    "trip_count": 10,
+    "mode": "student-development-demo"
+  },
+  "trips": [
+    {
+      "trip_id": "00000000",
+      "status": 200,
+      "observations": 2503,
+      "elapsed_s": 0.8709247910301201,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.9500399680255796,
+          "continuity_pairs": 2502,
+          "eligible_observations": 2236,
+          "top1_accuracy": 0.9633273703041145,
+          "arc_set_f1": 0.9
+        },
+        "hmm": {
+          "direct_step_continuity": 0.995603517186251,
+          "continuity_pairs": 2502,
+          "eligible_observations": 2236,
+          "top1_accuracy": 0.9798747763864043,
+          "arc_set_f1": 0.9683544303797469
+        }
+      }
+    },
+    {
+      "trip_id": "00000007",
+      "status": 200,
+      "observations": 1354,
+      "elapsed_s": 0.29279508301988244,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.9926090169992609,
+          "continuity_pairs": 1353,
+          "eligible_observations": 1232,
+          "top1_accuracy": 0.9131493506493507,
+          "arc_set_f1": 0.9694323144104804
+        },
+        "hmm": {
+          "direct_step_continuity": 1.0,
+          "continuity_pairs": 1353,
+          "eligible_observations": 1232,
+          "top1_accuracy": 1.0,
+          "arc_set_f1": 1.0
+        }
+      }
+    },
+    {
+      "trip_id": "00000009",
+      "status": 200,
+      "observations": 1049,
+      "elapsed_s": 0.5581551669747569,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.8406488549618321,
+          "continuity_pairs": 1048,
+          "eligible_observations": 459,
+          "top1_accuracy": 0.8845315904139434,
+          "arc_set_f1": 0.8929503916449086
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9360687022900763,
+          "continuity_pairs": 1048,
+          "eligible_observations": 459,
+          "top1_accuracy": 0.9455337690631809,
+          "arc_set_f1": 0.943089430894309
+        }
+      }
+    },
+    {
+      "trip_id": "00000040",
+      "status": 200,
+      "observations": 2995,
+      "elapsed_s": 0.8131933329859748,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.9452237808951236,
+          "continuity_pairs": 2994,
+          "eligible_observations": 2501,
+          "top1_accuracy": 0.9184326269492203,
+          "arc_set_f1": 0.8861209964412812
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9956579826319305,
+          "continuity_pairs": 2994,
+          "eligible_observations": 2501,
+          "top1_accuracy": 0.9968012794882047,
+          "arc_set_f1": 0.9861932938856016
+        }
+      }
+    },
+    {
+      "trip_id": "00000052",
+      "status": 200,
+      "observations": 262,
+      "elapsed_s": 0.10342950001358986,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.9386973180076629,
+          "continuity_pairs": 261,
+          "eligible_observations": 186,
+          "top1_accuracy": 0.9731182795698925,
+          "arc_set_f1": 0.94
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9578544061302682,
+          "continuity_pairs": 261,
+          "eligible_observations": 186,
+          "top1_accuracy": 1.0,
+          "arc_set_f1": 1.0
+        }
+      }
+    },
+    {
+      "trip_id": "00000056",
+      "status": 200,
+      "observations": 3958,
+      "elapsed_s": 1.8482770419795997,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.8615112458933536,
+          "continuity_pairs": 3957,
+          "eligible_observations": 697,
+          "top1_accuracy": 0.9512195121951219,
+          "arc_set_f1": 0.9613899613899614
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9643669446550417,
+          "continuity_pairs": 3957,
+          "eligible_observations": 697,
+          "top1_accuracy": 0.9985652797704447,
+          "arc_set_f1": 0.996
+        }
+      }
+    },
+    {
+      "trip_id": "00000065",
+      "status": 200,
+      "observations": 768,
+      "elapsed_s": 0.41051408305065706,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.8707571801566579,
+          "continuity_pairs": 766,
+          "eligible_observations": 386,
+          "top1_accuracy": 0.9481865284974094,
+          "arc_set_f1": 0.9078947368421053
+        },
+        "hmm": {
+          "direct_step_continuity": 0.97911227154047,
+          "continuity_pairs": 766,
+          "eligible_observations": 386,
+          "top1_accuracy": 0.9378238341968912,
+          "arc_set_f1": 0.9859154929577465
+        }
+      }
+    },
+    {
+      "trip_id": "00000076",
+      "status": 200,
+      "observations": 1486,
+      "elapsed_s": 1.0855113750440069,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.8247978436657682,
+          "continuity_pairs": 1484,
+          "eligible_observations": 797,
+          "top1_accuracy": 0.8870765370138017,
+          "arc_set_f1": 0.8254716981132075
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9575471698113207,
+          "continuity_pairs": 1484,
+          "eligible_observations": 797,
+          "top1_accuracy": 0.9924717691342535,
+          "arc_set_f1": 0.9754768392370572
+        }
+      }
+    },
+    {
+      "trip_id": "00000077",
+      "status": 200,
+      "observations": 3911,
+      "elapsed_s": 1.1738359580049291,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.8664961636828644,
+          "continuity_pairs": 3910,
+          "eligible_observations": 2108,
+          "top1_accuracy": 0.7438330170777988,
+          "arc_set_f1": 0.780045351473923
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9900255754475703,
+          "continuity_pairs": 3910,
+          "eligible_observations": 2108,
+          "top1_accuracy": 0.868595825426945,
+          "arc_set_f1": 0.9508196721311475
+        }
+      }
+    },
+    {
+      "trip_id": "00000091",
+      "status": 200,
+      "observations": 874,
+      "elapsed_s": 0.3857408339972608,
+      "metrics": {
+        "classifier": {
+          "direct_step_continuity": 0.8224513172966781,
+          "continuity_pairs": 873,
+          "eligible_observations": 575,
+          "top1_accuracy": 0.8469565217391304,
+          "arc_set_f1": 0.8817204301075269
+        },
+        "hmm": {
+          "direct_step_continuity": 0.9736540664375716,
+          "continuity_pairs": 873,
+          "eligible_observations": 575,
+          "top1_accuracy": 0.9547826086956521,
+          "arc_set_f1": 0.9800796812749004
+        }
+      }
+    }
+  ],
+  "unknown_trip_status": 404,
+  "invalid_id_status": 422,
+  "reference_payload_leak_check": "passed",
+  "scope": "local HTTP; a second physical laptop was not accessed"
+}

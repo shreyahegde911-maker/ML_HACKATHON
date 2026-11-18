@@ -1,0 +1,14 @@
+{
+  "javascript_errors": [],
+  "desktop": [
+    1440,
+    1000
+  ],
+  "mobile": [
+    390,
+    844
+  ],
+  "trip": "00000000",
+  "ui_request": "real POST /predict",
+  "scope": "single machine, separate UI port 8001 and API port 8000 with CORS; physical LAN laptop not accessed"
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "path": "artifacts/final/decision_tree.joblib",
+    "bytes": 134961,
+    "sha256": "bdad9f390802a85cdc549648e5c6201906a7964b71f3f6c2c33ba3c45b995a32"
+  },
+  {
+    "path": "artifacts/final/gaussian_naive_bayes.joblib",
+    "bytes": 1057,
+    "sha256": "79279b48f24fe60287d4f7e8bb35990120be4d2956116215148ece5303e715b6"
+  },
+  {
+    "path": "artifacts/final/hist_gradient_boosting.joblib",
+    "bytes": 99881,
+    "sha256": "8f2d9223e9287e2c368da2109fe7a9c6fe2ac180c0b65570ef1247fe4183d0e8"
+  },
+  {
+    "path": "artifacts/final/hist_gradient_boosting_tuned.joblib",
+    "bytes": 105615,
+    "sha256": "fea04f714174174444c154d44eb09237f3b51802f92445474c27757a81ff50f7"
+  },
+  {
+    "path": "artifacts/final/logistic_regression.joblib",
+    "bytes": 1339,
+    "sha256": "a07e12fd44b07b0ddce8513ee9f339aabaee8aff44ea83b0cac9a1148964e5c0"
+  },
+  {
+    "path": "artifacts/final/random_forest.joblib",
+    "bytes": 15137447,
+    "sha256": "8a5e1a1b38fe997871e92b238ae25f546fa57a593d920e67f11907243eb29681"
+  },
+  {
+    "path": "artifacts/final/selected.joblib",
+    "bytes": 105648,
+    "sha256": "539a977e8e6a9430541a27644c065ebf817212800a76c176ac9bfbd19eaca497"
+  }
+]

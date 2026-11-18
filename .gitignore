@@ -25,3 +25,8 @@ Thumbs.db
 
 # Regenerate derived reference labels with scripts/inspect_data.py
 data/derived/
+
+# Original local download packages (supplied raw trip files remain tracked)
+PathSnap_student_materials/
+PathSnap_student_materials.zip
+Student folder.zip
