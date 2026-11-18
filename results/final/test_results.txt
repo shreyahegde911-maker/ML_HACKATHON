@@ -26,6 +26,6 @@ test_no_candidates_retains_all_reference_misses (test_features.FeatureTests.test
 test_unreliable_labels_stay_null_and_candidates_unchanged (test_features.FeatureTests.test_unreliable_labels_stay_null_and_candidates_unchanged) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.170s
+Ran 24 tests in 0.172s
 
 OK
