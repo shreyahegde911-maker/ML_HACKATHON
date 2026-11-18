@@ -98,10 +98,20 @@ are excluded and candidate misses remain in the Top-1 denominator.
 - [Browser verification](results/final/browser_verification.json)
 - [Test record](results/final/test_results.txt)
 
-The UI map works offline. Folium's Leaflet assets/tiles need network access;
-an actual rendered screenshot is included for offline presentation.
+The UI opens a real OpenStreetMap street map with GPS and prediction overlays.
+Street tiles need internet; the **Network** view works offline and is selected
+automatically if tiles fail. Leaflet 1.9.4 is bundled locally with its license.
+Connection settings and evaluation diagnostics are collapsed to keep the
+workspace minimal. Folium's separate report map needs online assets/tiles;
+rendered screenshots are included for offline presentation.
 
 ## Verification and reproduction
+
+Reserved evaluation uses a separate local workflow documented in
+[the evaluator runbook](docs/EVALUATOR.md). Both launchers accept
+`--evaluator-root "path/to/trip-parent"`, preserve actual numeric trip IDs and
+support the discovered trip count. Reserved data, local paths, scores and
+private reports are ignored by Git; they must not be published without permission.
 
 ```sh
 python -m unittest discover -s tests -v

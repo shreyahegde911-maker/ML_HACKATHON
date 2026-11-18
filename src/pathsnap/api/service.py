@@ -3,6 +3,7 @@
 import json, time
 from pathlib import Path
 import joblib, numpy as np, pandas as pd
+from pyproj import Transformer
 from pathsnap.data.readers import load_trip_directory, _read
 from pathsnap.data import align_reference_route
 from pathsnap.candidates import build_segments, generate_candidates
@@ -73,6 +74,21 @@ def payload(trip, pointwise, decoded, metrics, elapsed, mode):
         return lines[ids].round(3).tolist()
 
     route_ids = sorted({arc for run in decoded["route_runs"] for arc in run})
+    classifier_lines = selected(pointwise)
+    decoded_lines = lines[np.asarray(route_ids, dtype=int)].round(3).tolist()
+    to_geographic = Transformer.from_crs(
+        trip["crs"]["projected"], "EPSG:4326", always_xy=True
+    )
+
+    def geographic_geometry(coordinates, geometry_type):
+        """GeoJSON uses longitude, latitude; metric inference stays unchanged."""
+        array = np.asarray(coordinates, dtype=float)
+        if not array.size:
+            return {"type": geometry_type, "coordinates": []}
+        flat = array.reshape(-1, 2)
+        longitude, latitude = to_geographic.transform(flat[:, 0], flat[:, 1])
+        geographic = np.column_stack([longitude, latitude]).reshape(array.shape)
+        return {"type": geometry_type, "coordinates": geographic.round(6).tolist()}
 
     return {
         "trip_id": trip["trip_id"],
@@ -87,8 +103,14 @@ def payload(trip, pointwise, decoded, metrics, elapsed, mode):
         "metrics": metrics,
         "gps": gps.round(3).tolist(),
         "roads": roads.round(3).tolist(),
-        "classifier_segments": selected(pointwise),
-        "decoded_segments": lines[np.asarray(route_ids, dtype=int)].round(3).tolist(),
+        "classifier_segments": classifier_lines,
+        "decoded_segments": decoded_lines,
+        "map_geojson": {
+            "gps": geographic_geometry(gps, "MultiPoint"),
+            "roads": geographic_geometry(roads, "MultiLineString"),
+            "classifier_segments": geographic_geometry(classifier_lines, "MultiLineString"),
+            "decoded_segments": geographic_geometry(decoded_lines, "MultiLineString"),
+        },
         "route_runs": decoded["route_runs"],
         "breaks": decoded["breaks"],
         "decoder_settings": decoded["settings"],

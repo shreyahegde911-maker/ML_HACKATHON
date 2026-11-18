@@ -2,6 +2,7 @@
 
 import contextlib
 import io
+import os
 from pathlib import Path
 import sys
 import tempfile
@@ -14,6 +15,27 @@ from scripts.serve_ui import UIServer
 
 
 class LauncherTests(unittest.TestCase):
+    def setUp(self):
+        self.environment = patch.dict(os.environ, {"PATHSNAP_LOCAL_CONFIG": ""})
+        self.environment.start()
+        self.addCleanup(self.environment.stop)
+
+    def test_any_actual_trip_count_is_supported(self):
+        with tempfile.TemporaryDirectory() as temp:
+            directory = Path(temp) / "123"
+            directory.mkdir()
+            for suffix in ("track", "nodes", "arcs"):
+                (directory / f"123.{suffix}").write_text("fixture")
+            with patch.dict(os.environ, {"PATHSNAP_EVALUATOR_ROOT": temp}):
+                launch.validate_files()
+
+    def test_wrong_dataset_service_is_not_reused(self):
+        response = MagicMock()
+        response.read.return_value = b'{"status":"ok","model_ready":true,"trip_count":1,"mode":"reserved-evaluator","dataset_id":"wrong"}'
+        response.__enter__.return_value = response
+        with patch.object(launch, "urlopen", return_value=response):
+            self.assertFalse(launch.service_ready("API", 8000))
+
     def test_ui_binding_does_not_require_reverse_dns(self):
         server = object.__new__(UIServer)
         server.server_address = ("0.0.0.0", 8001)

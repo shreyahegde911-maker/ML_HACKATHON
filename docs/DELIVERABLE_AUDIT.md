@@ -20,7 +20,6 @@ All five saved models loaded, passed fitted-state checks and predicted finite pr
 
 ## Event-specific items still pending
 
-- Reserved evaluator trip files were not supplied; final evaluator performance remains untested.
 - A second physical laptop/LAN and its receiving-terminal screenshot must be demonstrated at the event.
 - The team must review and submit its work, and be ready to explain/disclose AI assistance as required by the event policy.
 

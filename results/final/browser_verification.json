@@ -9,8 +9,60 @@
     844
   ],
   "trip": "00000000",
+  "additional_live_trip": "00000091",
   "ui_url": "http://127.0.0.1:8001/",
   "api_url": "http://127.0.0.1:8000",
   "ui_request": "real POST /predict",
+  "map_fit": {
+    "desktop": {
+      "aspectError": 7.247950017941207e-8,
+      "centerErrorX": 0.00047796358436997757,
+      "centerErrorY": 0.0001797477928371672
+    },
+    "mobile": {
+      "aspectError": 2.6054391977226032e-9,
+      "centerErrorX": 0.00151808730783101,
+      "centerErrorY": 0.0000709597869498005
+    },
+    "narrow_route": {
+      "aspectError": 1.4355667987686616e-8,
+      "centerErrorX": 1.6072917038352873e-7,
+      "centerErrorY": 0.000264867123228408
+    }
+  },
+  "street_map": {
+    "provider": "OpenStreetMap",
+    "successful_tile_responses": 154,
+    "desktop": {
+      "boundsVisible": true,
+      "centerErrorX": 0.00046685340802987696,
+      "centerErrorY": 0.0008787346221441616
+    },
+    "mobile": {
+      "boundsVisible": true,
+      "centerErrorX": 0,
+      "centerErrorY": 0
+    },
+    "narrow_route": {
+      "boundsVisible": true,
+      "centerErrorX": 0.00046685340802987696,
+      "centerErrorY": 0.0008787346221441616
+    },
+    "attribution": "visible",
+    "offline_tile_failure_fixture": "passed"
+  },
+  "reserved_privacy_development_fixture": "external tiles disabled; passed",
+  "interaction_checks": [
+    "street and network views",
+    "street zoom and fit",
+    "network zoom and fit",
+    "keyboard pan and reset",
+    "layer visibility",
+    "prediction JSON export",
+    "mobile width",
+    "tile failure and recovery fixture",
+    "connection error and recovery fixture",
+    "missing-reference fixture"
+  ],
   "scope": "local browser client and separate UI/API processes; physical LAN laptop not accessed"
 }

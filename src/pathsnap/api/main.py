@@ -7,12 +7,16 @@ import joblib
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from .service import ROOT, predict, payload, reference_for_evaluation
 from pathsnap.data.readers import load_trip_directory
 from pathsnap.decoding import sequence_metrics
+from pathsnap.runtime import data_root, evaluator_root, dataset_id, trip_ids
+from pathsnap.provenance import snapshot
 
 app = FastAPI(title="PathSnap", version="1.0.0")
+app.mount("/vendor", StaticFiles(directory=ROOT / "ui/vendor"), name="ui-vendor")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -23,29 +27,19 @@ log = logging.getLogger("uvicorn.error")
 
 
 def root():
-    return Path(
-        os.environ.get("PATHSNAP_EVALUATOR_ROOT", ROOT / "Student folder/student_test")
-    ).resolve()
+    return data_root()
 
 
 def mode():
     return (
         "reserved-evaluator"
-        if os.environ.get("PATHSNAP_EVALUATOR_ROOT")
+        if evaluator_root()
         else "student-development-demo"
     )
 
 
 def trips():
-    return (
-        sorted(
-            p.name
-            for p in root().iterdir()
-            if p.is_dir() and len(p.name) == 8 and p.name.isascii() and p.name.isdigit()
-        )
-        if root().is_dir()
-        else []
-    )
+    return trip_ids(root())
 
 
 @lru_cache(maxsize=1)
@@ -65,7 +59,7 @@ def settings():
 
 
 class Request(BaseModel):
-    trip_id: str = Field(pattern=r"^\d{8}$")
+    trip_id: str = Field(pattern=r"^[0-9]{1,32}$")
 
 
 @app.get("/health")
@@ -83,16 +77,24 @@ def health():
         log.warning("Model artifact is not ready", exc_info=True)
     count = len(trips())
     return {
-        "status": "ok" if ready and count == 10 else "not_ready",
+        "status": "ok" if ready and count > 0 else "not_ready",
         "model_ready": ready,
         "trip_count": count,
         "mode": mode(),
+        "dataset_id": dataset_id(),
     }
 
 
 @app.get("/trips")
 def catalog():
-    return {"mode": mode(), "trips": trips(), "expected_count": 10}
+    ids = trips()
+    return {"mode": mode(), "trips": ids, "trip_count": len(ids)}
+
+
+@app.get("/system")
+def system():
+    state = snapshot()
+    return {key: state[key] for key in ["git_commit", "pipeline_sha256", "model_sha256", "configuration_sha256", "configuration"]}
 
 
 @app.post("/predict")
@@ -107,6 +109,7 @@ def inference(request: Request):
     except (FileNotFoundError, ValueError) as exc:
         log.exception("Prediction failed for %s", request.trip_id)
         raise HTTPException(422, str(exc)) from exc
+    log.info("trip=%s stage=prediction_complete; starting server-only reference evaluation", request.trip_id)
     # A damaged optional reference must not discard valid predictions. Keep the
     # private error in server logs, return no accuracy, and never expose labels.
     evaluation_warning = None
@@ -120,6 +123,8 @@ def inference(request: Request):
             if labels is not None
             else None
         )
+        if labels is None:
+            evaluation_warning = "Accuracy unavailable because no reference was supplied."
     except (OSError, ValueError) as exc:
         log.warning("Reference evaluation unavailable for %s: %s", request.trip_id, exc)
         metrics = None

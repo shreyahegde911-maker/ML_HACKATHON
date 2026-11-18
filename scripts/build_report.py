@@ -86,7 +86,7 @@ def main():
     picture("ui_desktop.png", maxheight=370)
     text("Evidence and scope", "Heading2")
     text(
-        "All reported experiments were executed. Source, artifacts, metrics, search records and verification evidence are committed to the repository. The available data comprises 80 training trips and 10 student-development trips. Reserved evaluator files and a second physical laptop were not available: the presentation runs a clearly labelled development demo, with separate UI and API processes verified on this computer."
+        "All development experiments in this public report were executed. Source, artifacts, metrics and development evidence are committed to the repository. The development data comprises 80 training trips and 10 student-development trips. Reserved evaluator inputs and final results are kept separately in ignored local folders and a private report. The two-device physical LAN demonstration remains an event check."
     )
     text(
         "Observation labels are derived by ordered geometric alignment to the supplied reference route. They are provisional supervision, not independently verified physical ground truth. All reference-based scores must be interpreted accordingly."
@@ -352,7 +352,7 @@ def main():
         "Actual Folium export for student-development trip 00000000. Blue: raw GPS; green: supplied reference; orange: classifier-selected segments; purple: HMM/Viterbi segments. The supplied road network is available as a separate toggle. Layer controls permit comparison. The screenshot is captured from the generated interactive HTML, not a fabricated illustration."
     )
     text(
-        "Interactive artifact: results/final/final_folium_map.html. Source: scripts/evaluate_decoder.py. Geographic tiles/Leaflet assets require network access. The evaluator UI uses an offline projected map for the prediction workflow and never receives reference geometry."
+        "Interactive artifact: results/final/final_folium_map.html. Source: scripts/evaluate_decoder.py. Geographic tiles/Leaflet assets require network access. The evaluator UI defaults to an OpenStreetMap street map with real road labels, and retains an offline projected network view. It never receives reference geometry."
     )
     page()
     heading("7. API, UI and deployment")
@@ -361,7 +361,10 @@ def main():
         "Laptop 1 runs FastAPI, the saved classifier, candidate/feature code, graph decoder and separate internal evaluation. Laptop 2 serves ui/index.html and sends the chosen trip ID to POST /predict on Laptop 1. GET /health and GET /trips support readiness and catalog checks. The UI displays GPS/road/prediction layers, aggregate metrics, gaps and downloadable predictions."
     )
     text(
-        "The UI supports ten configured trips and an editable API address. The current default is explicitly labelled student-development-demo. Set PATHSNAP_EVALUATOR_ROOT to a folder of reserved trip directories on Laptop 1 for final evaluation. No reserved files were supplied during this work."
+        "The UI displays the actual configured trip catalog and an editable API address; no ten-trip assumption is enforced. The supplied development demo has ten trips. Use --evaluator-root or PATHSNAP_EVALUATOR_ROOT to select reserved trip directories on Laptop 1. Reserved mode uses the offline network map to prevent external tile requests for private trip locations."
+    )
+    text(
+        "The light workspace keeps trip selection, results, route layers and export visible. Connection settings and diagnostics are collapsed. Leaflet 1.9.4 is bundled locally; OpenStreetMap street tiles require internet and retain visible attribution. Tile failure selects the offline Network view. The API adds longitude/latitude GeoJSON for display without changing metric inference."
     )
     text(
         "Prediction finishes before reference files are opened. Reference labels/route geometry are excluded from response payloads, feature inputs and UI bundles. Unknown IDs return 404; malformed IDs return 422. Candidate misses, gaps and missing references are represented explicitly."
@@ -408,7 +411,7 @@ def main():
         "Sources: the five supplied PathSnap assignment PDFs under delivarables/; executable implementation and result files in this repository. Algorithm implementations use scikit-learn, SciPy, Optuna, FastAPI, Folium and ReportLab. Dataset and model assumptions are documented alongside source."
     )
     text(
-        "Final submission artifacts: the public GitHub repository and this single consolidated PDF. The report records current verified local capabilities; the reserved-data and second-device checks must be performed when that environment is available."
+        "Public artifacts: the repository and this consolidated development PDF. Reserved evaluation evidence and its private report must not be published without permission. The evaluator workflow freezes commit/model/configuration checksums before inspecting reserved inputs, then checks every actual trip through the API and UI without fitting or tuning. A physical two-device check remains separate."
     )
     text(
         "The reproducible deliverable checklist is docs/DELIVERABLE_AUDIT.md, generated by scripts/audit_deliverables.py. Regeneration accepts freshly rebuilt feature tables; optimisation studies are tied to input/code/fold fingerprints so old parameters are not silently reused on changed data."

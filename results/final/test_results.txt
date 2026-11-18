@@ -6,7 +6,7 @@ test_catalog_and_health (test_api.ApiTests.test_catalog_and_health) ... ok
 test_external_evaluator_root_predicts_without_reference (test_api.ApiTests.test_external_evaluator_root_predicts_without_reference) ... ok
 test_health_checks_model_contents_not_just_file_existence (test_api.ApiTests.test_health_checks_model_contents_not_just_file_existence) ... Model artifact is not ready
 Traceback (most recent call last):
-  File "/Users/shreyaskm/Documents/ML/hackathon/src/pathsnap/api/main.py", line 75, in health
+  File "/Users/shreyaskm/Documents/ML/hackathon/src/pathsnap/api/main.py", line 69, in health
     loaded = bundle()
              ^^^^^^^^
   File "/Users/shreyaskm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
@@ -20,6 +20,7 @@ Traceback (most recent call last):
 ValueError: corrupt artifact
 ok
 test_model_cache_reloads_after_artifact_replacement (test_api.ApiTests.test_model_cache_reloads_after_artifact_replacement) ... ok
+test_reference_is_opened_only_after_prediction (test_api.ApiTests.test_reference_is_opened_only_after_prediction) ... ok
 test_separate_ui_origin (test_api.ApiTests.test_separate_ui_origin) ... ok
 test_unknown_and_invalid_trips (test_api.ApiTests.test_unknown_and_invalid_trips) ... ok
 test_distant_and_zero_length_labels_are_ineligible (test_data.DataTests.test_distant_and_zero_length_labels_are_ineligible) ... ok
@@ -44,6 +45,7 @@ test_long_segment_fallback_and_integer_ids (test_features.FeatureTests.test_long
 test_missing_reference_arc_is_not_inserted (test_features.FeatureTests.test_missing_reference_arc_is_not_inserted) ... ok
 test_no_candidates_retains_all_reference_misses (test_features.FeatureTests.test_no_candidates_retains_all_reference_misses) ... ok
 test_unreliable_labels_stay_null_and_candidates_unchanged (test_features.FeatureTests.test_unreliable_labels_stay_null_and_candidates_unchanged) ... ok
+test_any_actual_trip_count_is_supported (test_launcher.LauncherTests.test_any_actual_trip_count_is_supported) ... ok
 test_check_starts_no_services (test_launcher.LauncherTests.test_check_starts_no_services) ... ok
 test_conflicting_port_starts_nothing (test_launcher.LauncherTests.test_conflicting_port_starts_nothing) ... ok
 test_ctrl_c_cleans_up_only_new_processes (test_launcher.LauncherTests.test_ctrl_c_cleans_up_only_new_processes) ... ok
@@ -55,8 +57,9 @@ test_ui_only_needs_no_environment_install (test_launcher.LauncherTests.test_ui_o
 test_ui_only_validation_does_not_require_models_or_data (test_launcher.LauncherTests.test_ui_only_validation_does_not_require_models_or_data) ... ok
 test_windows_child_gets_its_own_process_group (test_launcher.LauncherTests.test_windows_child_gets_its_own_process_group) ... ok
 test_windows_shutdown_signals_only_owned_group (test_launcher.LauncherTests.test_windows_shutdown_signals_only_owned_group) ... ok
+test_wrong_dataset_service_is_not_reused (test_launcher.LauncherTests.test_wrong_dataset_service_is_not_reused) ... ok
 
 ----------------------------------------------------------------------
-Ran 40 tests in 0.214s
+Ran 43 tests in 0.222s
 
 OK

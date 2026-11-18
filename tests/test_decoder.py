@@ -117,6 +117,7 @@ class DecoderTests(unittest.TestCase):
         result = payload(trip, decoded["predictions"], decoded, None, 0.0, "test")
         self.assertEqual(len(result["classifier_segments"]), 2)
         self.assertEqual(len(result["decoded_segments"]), 3)
+        self.assertEqual(len(result["map_geojson"]["decoded_segments"]["coordinates"]), 3)
 
 
 if __name__ == "__main__":

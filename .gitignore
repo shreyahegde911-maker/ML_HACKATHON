@@ -30,3 +30,9 @@ data/derived/
 PathSnap_student_materials/
 PathSnap_student_materials.zip
 Student folder.zip
+
+# Reserved data, local deployment paths and private evaluation evidence
+/evaluator_test/
+/results/evaluator/
+/output/private/
+/.pathsnap-local.json

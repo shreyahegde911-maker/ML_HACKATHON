@@ -16,6 +16,8 @@ from urllib.request import Request
 import webbrowser
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+from pathsnap.runtime import data_root, evaluator_root, dataset_id, trip_ids
 
 
 def say(message):
@@ -92,17 +94,12 @@ def validate_files(api=True):
             raise RuntimeError(
                 f"Missing {relative}. Pull the complete repository; no retraining is required."
             )
-    data = Path(
-        os.environ.get("PATHSNAP_EVALUATOR_ROOT", ROOT / "Student folder/student_test")
-    )
-    trips = (
-        sorted(p for p in data.iterdir() if p.is_dir() and p.name.isdigit())
-        if data.is_dir()
-        else []
-    )
-    if len(trips) != 10 or any(len(p.name) != 8 for p in trips):
-        raise RuntimeError(f"Expected ten eight-digit trip folders in {data}.")
-    for trip in trips:
+    data = data_root()
+    ids = trip_ids(data)
+    if not ids:
+        raise RuntimeError(f"No numeric trip folders found in {data}.")
+    for trip_id in ids:
+        trip = data / trip_id
         for suffix in ("track", "nodes", "arcs"):
             if not (trip / f"{trip.name}.{suffix}").is_file():
                 raise RuntimeError(f"Missing {trip.name}.{suffix} in {trip}.")
@@ -118,7 +115,9 @@ def service_ready(service, port):
             return (
                 data.get("status") == "ok"
                 and data.get("model_ready") is True
-                and data.get("trip_count") == 10
+                and data.get("trip_count", 0) > 0
+                and data.get("dataset_id") == dataset_id()
+                and data.get("mode") == ("reserved-evaluator" if evaluator_root() else "student-development-demo")
             )
         return b"PathSnap" in body and b'id="trip"' in body and b'id="run"' in body
     except (OSError, ValueError, URLError):
@@ -197,6 +196,7 @@ def main(argv=None):
     )
     parser.add_argument("--api-port", type=int, default=8000)
     parser.add_argument("--ui-port", type=int, default=8001)
+    parser.add_argument("--evaluator-root", help="Folder whose children are reserved trip directories (any actual trip count)")
     args = parser.parse_args(argv)
     if not all(1 <= p <= 65535 for p in (args.api_port, args.ui_port)):
         parser.error("Ports must be between 1 and 65535")
@@ -204,6 +204,11 @@ def main(argv=None):
         parser.error("API and UI must use different ports")
     processes = []
     try:
+        if args.evaluator_root:
+            selected_root = Path(args.evaluator_root).expanduser().resolve()
+            os.environ["PATHSNAP_EVALUATOR_ROOT"] = str(selected_root)
+        elif evaluator_root():
+            os.environ["PATHSNAP_EVALUATOR_ROOT"] = str(evaluator_root())
         validate_files(api=not args.ui_only)
         python = environment_python(args.ui_only, args.skip_install)
         if args.check:

@@ -3,14 +3,15 @@
     "status": "ok",
     "model_ready": true,
     "trip_count": 10,
-    "mode": "student-development-demo"
+    "mode": "student-development-demo",
+    "dataset_id": "f6b0c33ee0c0c6672da2ace8695485d96a089f27fc30e50b831bff379d28b5c0"
   },
   "trips": [
     {
       "trip_id": "00000000",
       "status": 200,
       "observations": 2503,
-      "elapsed_s": 0.8941632080241106,
+      "elapsed_s": 1.0432844999595545,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9500399680255796,
@@ -39,7 +40,7 @@
       "trip_id": "00000007",
       "status": 200,
       "observations": 1354,
-      "elapsed_s": 0.34619291697163135,
+      "elapsed_s": 0.3660276670125313,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9926090169992609,
@@ -68,7 +69,7 @@
       "trip_id": "00000009",
       "status": 200,
       "observations": 1049,
-      "elapsed_s": 0.5469865420018323,
+      "elapsed_s": 0.6221870000008494,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8406488549618321,
@@ -97,7 +98,7 @@
       "trip_id": "00000040",
       "status": 200,
       "observations": 2995,
-      "elapsed_s": 0.8514609170379117,
+      "elapsed_s": 0.8787613330059685,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9452237808951236,
@@ -126,7 +127,7 @@
       "trip_id": "00000052",
       "status": 200,
       "observations": 262,
-      "elapsed_s": 0.10698279202915728,
+      "elapsed_s": 0.11491308297263458,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9386973180076629,
@@ -155,7 +156,7 @@
       "trip_id": "00000056",
       "status": 200,
       "observations": 3958,
-      "elapsed_s": 1.8871568749891594,
+      "elapsed_s": 1.8666677909786813,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8615112458933536,
@@ -184,7 +185,7 @@
       "trip_id": "00000065",
       "status": 200,
       "observations": 768,
-      "elapsed_s": 0.36935204098699614,
+      "elapsed_s": 0.41604187502525747,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8707571801566579,
@@ -213,7 +214,7 @@
       "trip_id": "00000076",
       "status": 200,
       "observations": 1486,
-      "elapsed_s": 1.225623291975353,
+      "elapsed_s": 1.820785292016808,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8247978436657682,
@@ -242,7 +243,7 @@
       "trip_id": "00000077",
       "status": 200,
       "observations": 3911,
-      "elapsed_s": 1.78606083401246,
+      "elapsed_s": 1.3794215000234544,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8664961636828644,
@@ -271,7 +272,7 @@
       "trip_id": "00000091",
       "status": 200,
       "observations": 874,
-      "elapsed_s": 0.7972268749726936,
+      "elapsed_s": 0.4754343339591287,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8224513172966781,

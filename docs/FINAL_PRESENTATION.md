@@ -68,8 +68,12 @@ Open `http://localhost:8001`. Enter `http://LAPTOP1_LAN_IP:8000` in the API addr
 field, click Connect, choose one of the ten trips, then Reconstruct route.
 Both laptops must share a reachable network, and Laptop 1 must permit inbound
 TCP port 8000. Confirm `/health` is reachable from Laptop 2 before presenting.
-The UI's projected map works without tile/CDN downloads. Folium HTML uses online
-Leaflet assets/background tiles; screenshots are included for offline viewing.
+The default **Street map** uses OpenStreetMap tiles, with road names and
+landmarks. Internet is required for these tiles. **Network** shows the local
+projected road graph offline; failed tile requests automatically select it.
+Leaflet is bundled inside ui/vendor, so copy the entire ui folder to Laptop 2.
+The compact connection settings panel retains the API address for two laptops.
+Folium HTML uses online assets/tiles; screenshots are included for offline viewing.
 
 ## Reserved evaluator trip configuration
 
