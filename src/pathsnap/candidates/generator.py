@@ -78,6 +78,10 @@ def generate_candidates(observations: pd.DataFrame, segments: pd.DataFrame,
         centers = np.column_stack(((subset.x1 + subset.x2) / 2, (subset.y1 + subset.y2) / 2))
         indexes.append((ids, cKDTree(centers), float(subset.length_m.max()) / 2))
     rows = []
+    arc_ids = seg.arc_id.to_numpy(dtype=np.int64)
+    x1, y1 = seg.x1.to_numpy(), seg.y1.to_numpy()
+    dx, dy = seg.dx.to_numpy(), seg.dy.to_numpy()
+    denominator = dx * dx + dy * dy
     for p in observations.itertuples(index=False):
         px, py = float(p.x_m), float(p.y_m)
         if not np.isfinite(px) or not np.isfinite(py):
@@ -86,14 +90,19 @@ def generate_candidates(observations: pd.DataFrame, segments: pd.DataFrame,
         for global_ids, tree, half_max in indexes:
             local = tree.query_ball_point([px, py], config.expanded_search_radius_m + half_max)
             retrieved.update(global_ids[i] for i in local)
-        ids = sorted(retrieved)
-        d = _distances(px, py, seg.iloc[ids]) if ids else np.array([])
-        selected = [(ids[i], float(dist)) for i, dist in enumerate(d) if dist <= config.search_radius_m]
+        ids = np.asarray(sorted(retrieved), dtype=np.int64)
+        if not len(ids):
+            continue
+        t = np.divide((px - x1[ids]) * dx[ids] + (py - y1[ids]) * dy[ids], denominator[ids], out=np.zeros(len(ids)), where=denominator[ids] > 0)
+        t = np.clip(t, 0, 1)
+        d = np.hypot(px - x1[ids] - t * dx[ids], py - y1[ids] - t * dy[ids])
+        keep = d <= config.search_radius_m
         expanded = False
-        if not selected:
+        if not keep.any():
             expanded = True
-            selected = [(ids[i], float(dist)) for i, dist in enumerate(d) if dist <= config.expanded_search_radius_m] if ids else []
-        selected.sort(key=lambda item: (item[1], str(seg.iloc[item[0]].arc_id)))
-        for idx, dist in selected[:config.max_candidates]:
-            rows.append((p.observation_id, seg.iloc[idx].arc_id, dist, expanded))
+            keep = d <= config.expanded_search_radius_m
+        chosen = np.flatnonzero(keep)
+        chosen = chosen[np.lexsort((arc_ids[ids[chosen]], d[chosen]))[:config.max_candidates]]
+        for local in chosen:
+            rows.append((int(p.observation_id), int(arc_ids[ids[local]]), float(d[local]), expanded))
     return pd.DataFrame(rows, columns=cols)

@@ -5,7 +5,7 @@ network. The existing module layout supports data processing, candidate
 generation, classifiers, HMM/Viterbi decoding, evaluation, FastAPI and a separate
 evaluator UI.
 
-## Implemented: Part 1
+## Implemented: Parts 1 through 4 (two-model baseline)
 
 - Strict trip readers preserving original observation/node/arc IDs and order.
 - Validation of shapes, coordinates, ID bounds, timestamps and route breaks.
@@ -15,10 +15,16 @@ evaluator UI.
 - Seed-42 whole-trip split: 64 training, 16 validation, 10 student-development.
 - Runnable inspection script, source-invariance checks and focused tests.
 
-The models, candidate/feature pipeline, production HMM, API and UI are not
-implemented by Part 1. No model performance or official pointwise accuracy is
-claimed. The assignment still requires at least five models, Bayesian tuning,
-classifier/decoder comparison and the two-laptop deployment.
+The candidate/feature pipeline and two classifiers are implemented and run:
+Logistic Regression and Random Forest. Actual shared feature tables, trained
+artifacts, trip-aware three-fold CV, validation/student-development comparisons,
+predictions, plots and a Folium comparison map are included. Scores measure
+agreement with provisional derived references, not official pointwise accuracy.
+See [the baseline workflow](docs/two_model_baseline.md) and
+[recorded results](results/baselines/README.md).
+
+The full assignment still requires at least five models, Bayesian tuning,
+production HMM/Viterbi experiments, the API/UI and final report.
 
 ## Setup and execution
 
@@ -31,12 +37,15 @@ python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
 python scripts/inspect_data.py --data-root "Student folder" --partition train --trip 00000001 --align --output-dir results/part1_example
 python scripts/inspect_data.py --data-root "Student folder" --partition all --align --output-dir results/part1
+python scripts/train_baselines.py --features artifacts/features --jobs 2
+python scripts/map_baselines.py
+python scripts/predict_baseline.py --model random_forest --partition student_test --trip-id 00000000
 ```
 
 Inspection outputs are in `results/part1/`; the shared trip manifest is
 `results/part1/split_manifest.json`. Generated reference-label CSVs are in
 `data/derived/reference_labels/{partition}/{trip_id}.csv` and are gitignored.
-Run the last command to regenerate them for both models.
+Run `scripts/inspect_data.py --partition all --align` to regenerate them.
 
 ## Part 2 handoff
 

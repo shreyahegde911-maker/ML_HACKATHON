@@ -1,0 +1,12 @@
+[
+  {
+    "path": "artifacts/models/logistic_regression.joblib",
+    "bytes": 1334,
+    "sha256": "d61e7c620b1f8f654565ece23b0757e63bf7ec088dd8177ce1330387f540ef8c"
+  },
+  {
+    "path": "artifacts/models/random_forest.joblib",
+    "bytes": 14713782,
+    "sha256": "9395c6f6cae9ad7574e94d6be13ee53c696d76b387df70d5feaf2907945a1faf"
+  }
+]

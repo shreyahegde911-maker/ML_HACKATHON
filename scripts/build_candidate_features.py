@@ -57,6 +57,7 @@ def main():
     ap.add_argument("--partition", default="train", choices=["train", "validation", "student_test"])
     ap.add_argument("--manifest", type=Path, default=ROOT / "results" / "part1" / "split_manifest.json")
     ap.add_argument("--references", type=Path, help="Part 1 alignment CSV; never used for candidate selection")
+    ap.add_argument("--references-dir", type=Path, help="Part 1 per-trip alignment root, containing train/ and student_test/")
     ap.add_argument("--reliable-status", nargs="+", default=["aligned", "reliable", "ok"],
                     help="alignment_status values eligible for labels (case-insensitive)")
     ap.add_argument("--trip-id")
@@ -66,6 +67,10 @@ def main():
     ap.add_argument("--expanded-radius-m", type=float, default=300.0)
     ap.add_argument("--max-candidates", type=int, default=8)
     args = ap.parse_args()
+    if args.references and args.references_dir:
+        ap.error("Choose --references or --references-dir")
+    if args.output.resolve() == args.data_root.resolve() or args.data_root.resolve() in args.output.resolve().parents:
+        ap.error("Output must be outside raw data")
 
     if args.manifest and args.manifest.exists():
         manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
@@ -115,9 +120,13 @@ def main():
     args.output.mkdir(parents=True, exist_ok=True)
     feature_table = pd.concat(features, ignore_index=True) if features else pd.DataFrame()
     summary = pd.DataFrame(summaries)
-    if args.references and len(feature_table):
-        references = pd.read_csv(args.references, dtype={"trip_id": str})
+    if args.references or args.references_dir:
+        if args.references_dir:
+            references = pd.concat([pd.read_csv(args.references_dir / source_partition / f"{tid}.csv", dtype={"trip_id": str}) for tid in trip_ids], ignore_index=True)
+        else:
+            references = pd.read_csv(args.references, dtype={"trip_id": str})
         references["trip_id"] = references.trip_id.map(trip_token)
+        references = references.loc[references.trip_id.isin(trip_ids)].reset_index(drop=True)
         supervised = attach_reference_labels(feature_table, references, args.reliable_status)
         coverage = reference_candidate_coverage(feature_table, references, args.reliable_status)
         for trip_id, group in coverage.groupby("trip_id"):
@@ -136,7 +145,7 @@ def main():
     print(f"features: {args.output / (args.partition + '_features.csv')}")
     print(f"coverage: {args.output / (args.partition + '_coverage.csv')}")
     if summary.reference_label_observations.sum() == 0:
-        message = "Part 1 reference alignments not present" if not args.references else "no reliable alignment labels in supplied file"
+        message = "Part 1 reference alignments not present" if not (args.references or args.references_dir) else "no reliable alignment labels in supplied file"
         print(f"candidate miss rate: unavailable ({message})")
 
 

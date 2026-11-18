@@ -16,13 +16,15 @@ def _same_id(left, right):
 
 def build_feature_table(trip_id, observations, candidates, segments):
     """Heading difference is absolute, wrapped degrees in [0,180]."""
-    obs = observations.copy().sort_values(["timestamp", "observation_id"], kind="stable")
+    # Part 1 preserves source order. Sorting would conceal backwards timestamps
+    # and calculate movement between observations that were not consecutive.
+    obs = observations.copy()
     dt = pd.to_numeric(obs.timestamp, errors="coerce").diff()
     dx, dy = obs.x_m.diff(), obs.y_m.diff()
     displacement = np.hypot(dx, dy)
     valid_dt = dt.where(np.isfinite(dt) & (dt > 0))
     speed = (displacement / valid_dt).where(valid_dt.notna())
-    moving = displacement > 1e-6
+    moving = (displacement > 1e-6) & valid_dt.notna()
     move_heading = np.degrees(np.arctan2(dx, dy)) % 360.0  # clockwise from north
     obs["_speed"] = speed.where(moving, 0.0).fillna(0.0)
     obs["_dt"] = valid_dt.fillna(0.0)
@@ -47,13 +49,12 @@ def attach_reference_labels(features, references, reliable_statuses=("aligned", 
     reliable_values = {str(s).lower() for s in reliable_statuses}
     reliable = out.alignment_status.astype("string").str.lower().isin(reliable_values) & out.reference_arc_id.notna()
     out["label"] = pd.Series(pd.NA, index=out.index, dtype="Int64")
-    out.loc[reliable, "label"] = out.loc[reliable].apply(lambda r: int(_same_id(r.arc_id, r.reference_arc_id)), axis=1).astype("int64")
+    out.loc[reliable, "label"] = (out.loc[reliable, "arc_id"].to_numpy() == out.loc[reliable, "reference_arc_id"].to_numpy()).astype("int64")
     out["label_reliable"] = reliable
-    grouped = out.groupby(["trip_id", "observation_id"], dropna=False)
-    missing = grouped.apply(lambda g: bool(g.reference_arc_id.notna().any() and g.label_reliable.any() and
-                                            not any(_same_id(g.reference_arc_id.dropna().iloc[0], arc_id) for arc_id in g.arc_id)),
-                            include_groups=False).rename("reference_arc_missing")
-    return out.merge(missing.reset_index(), on=["trip_id", "observation_id"], how="left")
+    matches = out["label"].eq(1).fillna(False)
+    has_match = matches.groupby([out.trip_id, out.observation_id]).transform("any")
+    out["reference_arc_missing"] = reliable & ~has_match
+    return out
 
 
 def reference_candidate_coverage(features, references, reliable_statuses=("aligned", "reliable", "ok")):
@@ -61,10 +62,16 @@ def reference_candidate_coverage(features, references, reliable_statuses=("align
     ref = references[["trip_id", "observation_id", "reference_arc_id", "alignment_status"]].copy()
     reliable_values = {str(s).lower() for s in reliable_statuses}
     reliable = ref.alignment_status.astype("string").str.lower().isin(reliable_values) & ref.reference_arc_id.notna()
-    available = features.groupby(["trip_id", "observation_id"]).arc_id.agg(list).rename("candidate_arc_ids")
-    out = ref.join(available, on=["trip_id", "observation_id"])
-    out["candidate_arc_ids"] = out.candidate_arc_ids.map(lambda x: x if isinstance(x, list) else [])
-    out["label_reliable"] = reliable
-    out["reference_arc_missing"] = reliable & out.apply(lambda r: not any(_same_id(r.reference_arc_id, a) for a in r.candidate_arc_ids), axis=1)
-    out["has_candidates"] = out.candidate_arc_ids.map(bool)
+    ref["label_reliable"] = reliable.to_numpy()
+    if ref.duplicated(["trip_id", "observation_id"]).any():
+        raise ValueError("Reference observation keys must be unique")
+    counts = features.groupby(["trip_id", "observation_id"]).size().rename("candidate_count")
+    out = ref.join(counts, on=["trip_id", "observation_id"])
+    out["candidate_count"] = out.candidate_count.fillna(0).astype(int)
+    matched = features[["trip_id", "observation_id", "arc_id"]].drop_duplicates().rename(columns={"arc_id": "reference_arc_id"})
+    matched["_matched"] = True
+    out = out.merge(matched, on=["trip_id", "observation_id", "reference_arc_id"], how="left", validate="one_to_one")
+    out["reference_arc_missing"] = out.label_reliable & ~out["_matched"].eq(True)
+    out["has_candidates"] = out.candidate_count > 0
+    out = out.drop(columns="_matched")
     return out

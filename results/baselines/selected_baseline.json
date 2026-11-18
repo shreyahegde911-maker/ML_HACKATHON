@@ -1,0 +1,9 @@
+{
+  "selected_baseline": "random_forest",
+  "selection_partition": "validation",
+  "primary_metric": "observation_top1_accuracy",
+  "value": 0.8469746646795827,
+  "reason": "Highest validation Top-1 and candidate Macro F1 among the two fixed baselines. Student-development was not used for this selection.",
+  "label_source": "provisional_ordered_reference_alignment",
+  "production_decoder_implemented": false
+}
