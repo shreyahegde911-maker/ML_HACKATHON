@@ -109,6 +109,11 @@ python scripts/verify_api.py
 ```
 
 See the runbook for full regeneration, browser checks and reserved-folder setup.
+Run `python scripts/audit_deliverables.py` for an artifact/model/report audit and
+the event-specific pending items. The macOS/Windows workflow also exercises the
+native launcher and a real start/predict/stop cycle. For regenerated feature
+tables, use `python scripts/final_experiments.py --features cache/candidate_features`;
+without that option it reproduces from the committed compressed shared tables.
 The earlier two-model checkpoint remains under results/baselines and
 docs/two_model_baseline.md; results/final is the final comparison.
 

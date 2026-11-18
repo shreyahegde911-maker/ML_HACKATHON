@@ -25,8 +25,8 @@
     "model": "logistic_regression",
     "cv_macro_f1": 0.7902262053355074,
     "cv_std": 0.0061324788504789505,
-    "fit_s": 0.2214224580093287,
-    "inference_s": 0.0023849999997764826,
+    "fit_s": 0.25510429101996124,
+    "inference_s": 0.0027179589960724115,
     "training_candidate_macro_f1": 0.7920850961654724,
     "direct_step_continuity": 0.8787340714434928
   },
@@ -56,8 +56,8 @@
     "model": "random_forest",
     "cv_macro_f1": 0.8279508885087877,
     "cv_std": 0.016514567769726353,
-    "fit_s": 36.134338499978185,
-    "inference_s": 0.36903204099508,
+    "fit_s": 65.32549979200121,
+    "inference_s": 0.6987654159893282,
     "training_candidate_macro_f1": 0.8355799993497992,
     "direct_step_continuity": 0.8891790265301859
   },
@@ -87,8 +87,8 @@
     "model": "decision_tree",
     "cv_macro_f1": 0.8140448271528481,
     "cv_std": 0.01439144149948993,
-    "fit_s": 2.7653468329808675,
-    "inference_s": 0.008455624978523701,
+    "fit_s": 3.4361517090001144,
+    "inference_s": 0.011214499943889678,
     "training_candidate_macro_f1": 0.8224842101882865,
     "direct_step_continuity": 0.8786296218926258
   },
@@ -118,8 +118,8 @@
     "model": "hist_gradient_boosting",
     "cv_macro_f1": 0.8510244949232108,
     "cv_std": 0.022113829379243426,
-    "fit_s": 2.647996332962066,
-    "inference_s": 0.16136404202552512,
+    "fit_s": 4.587781334004831,
+    "inference_s": 0.2978089159587398,
     "training_candidate_macro_f1": 0.8527053657981605,
     "direct_step_continuity": 0.8932003342385628
   },
@@ -149,8 +149,8 @@
     "model": "gaussian_naive_bayes",
     "cv_macro_f1": 0.8359685117860156,
     "cv_std": 0.017447260372192738,
-    "fit_s": 0.052850208012387156,
-    "inference_s": 0.006828874989878386,
+    "fit_s": 0.07738945801975206,
+    "inference_s": 0.010956624988466501,
     "training_candidate_macro_f1": 0.8373163511021682,
     "direct_step_continuity": 0.8657823271359933
   },
@@ -180,8 +180,8 @@
     "model": "hist_gradient_boosting_tuned",
     "cv_macro_f1": 0.8504667694944349,
     "cv_std": 0.02173375780449511,
-    "fit_s": 1.9736690419958904,
-    "inference_s": 0.13022841699421406,
+    "fit_s": 4.38245516695315,
+    "inference_s": 0.3122489160159603,
     "training_candidate_macro_f1": 0.851732216718281,
     "direct_step_continuity": 0.89210361395446
   }

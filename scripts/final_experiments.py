@@ -1,6 +1,6 @@
 """Five-model comparison, TPE Bayesian search and final artifact export."""
 
-import os, sys, json, time, hashlib
+import os, sys, json, time, hashlib, argparse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +18,8 @@ from sklearn.metrics import f1_score
 from pathsnap.models import make_models, predict_candidates
 from pathsnap.features.engineering import FEATURES
 from pathsnap.evaluation import evaluate_classifier
+from pathsnap.data.readers import load_trip_directory
+from pathsnap.decoding import sequence_metrics
 
 OUT = ROOT / "results/final"
 ART = ROOT / "artifacts/final"
@@ -27,25 +29,57 @@ def dump(path, value):
     path.write_text(json.dumps(value, indent=2, default=str) + "\n")
 
 
+def save_model(value, path):
+    temporary = path.with_suffix(".joblib.tmp")
+    try:
+        joblib.dump(value, temporary, compress=3)
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--features", type=Path, default=ROOT / "artifacts/features")
+    parser.add_argument("--data-root", type=Path, default=ROOT / "Student folder")
+    args = parser.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
     ART.mkdir(parents=True, exist_ok=True)
+    manifest = json.loads((ROOT / "results/part1/split_manifest.json").read_text())
+    input_files = []
 
     def read(p, s):
-        return pd.read_csv(
-            ROOT / f"artifacts/features/{p}_{s}.csv.gz", dtype={"trip_id": str}
-        )
+        options = [args.features / f"{p}_{s}.csv", args.features / f"{p}_{s}.csv.gz"]
+        path = next((candidate for candidate in options if candidate.is_file()), None)
+        if path is None:
+            raise FileNotFoundError(f"Missing shared table: {options}")
+        input_files.append(path)
+        frame = pd.read_csv(path, dtype={"trip_id": str})
+        if not set(frame.trip_id).issubset(manifest[p]):
+            raise ValueError(f"{p}: trip IDs do not match the shared manifest")
+        return frame
 
     train = pd.concat(
         [read(p, "supervised") for p in ["train", "validation"]], ignore_index=True
     )
     dev = read("student_test", "supervised")
     coverage = read("student_test", "reference_coverage")
+    if set(train.trip_id) & set(dev.trip_id):
+        raise ValueError("Training and student-development trips overlap")
+    for name, frame in [("training", train), ("development", dev)]:
+        if not np.isfinite(frame[FEATURES].to_numpy()).all():
+            raise ValueError(f"{name}: nonfinite model features")
+        if not frame.label.dropna().isin([0, 1]).all():
+            raise ValueError(f"{name}: labels must be binary or unset")
     train = train.loc[train.label.notna()].reset_index(drop=True)
     X = train[FEATURES]
     y = train.label.to_numpy(dtype=int)
     groups = train.trip_id
     folds = list(GroupKFold(3).split(X, y, groups))
+    development_trips = {
+        tid: load_trip_directory(args.data_root / "student_test" / tid)
+        for tid in sorted(coverage.trip_id.unique())
+    }
     dump(
         OUT / "folds.json",
         [
@@ -98,7 +132,7 @@ def main():
         tick = time.perf_counter()
         model.fit(X, y)
         fit_s = time.perf_counter() - tick
-        joblib.dump(
+        save_model(
             {
                 "model": model,
                 "features": FEATURES,
@@ -106,7 +140,6 @@ def main():
                 "label_source": "provisional_ordered_reference_alignment",
             },
             ART / f"{name}.joblib",
-            compress=3,
         )
         tick = time.perf_counter()
         p = predict_candidates(model, dev)
@@ -122,6 +155,25 @@ def main():
         # Training score is a measured overfit diagnostic, never a selection objective.
         metrics["training_candidate_macro_f1"] = float(
             f1_score(y, model.predict(X), average="macro", zero_division=0)
+        )
+        continuity = [
+            sequence_metrics(
+                trip,
+                predictions.loc[predictions.trip_id.eq(tid)].sort_values(
+                    "observation_id"
+                ),
+            )
+            for tid, trip in development_trips.items()
+        ]
+        pairs = sum(row["continuity_pairs"] for row in continuity)
+        metrics["direct_step_continuity"] = (
+            sum(
+                (row["direct_step_continuity"] or 0.0) * row["continuity_pairs"]
+                for row in continuity
+            )
+            / pairs
+            if pairs
+            else None
         )
         results.append(metrics)
         predictions.to_csv(
@@ -210,24 +262,45 @@ def main():
         m = clone(base).set_params(**parameters(trial))
         return float(np.mean(cross(m, sample)))
 
+    # A study belongs to exact data/model/folds/code, not just a fixed name.
+    context = {
+        "winner": winner,
+        "model_configuration": configs[winner],
+        "input_sha256": {
+            path.name: hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in input_files
+        },
+        "folds": json.loads((OUT / "folds.json").read_text()),
+        "sample_sha256": hashlib.sha256(sample.tobytes()).hexdigest(),
+        "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    }
+    fingerprint = hashlib.sha256(
+        json.dumps(context, sort_keys=True).encode()
+    ).hexdigest()
+    context["fingerprint"] = fingerprint
+    dump(OUT / "trial_context.json", context)
     study = optuna.create_study(
         direction="maximize",
         sampler=optuna.samplers.TPESampler(seed=42, n_startup_trials=3),
-        study_name="pathsnap_training_only",
+        study_name=f"pathsnap_{fingerprint[:16]}",
         storage=f'sqlite:///{OUT/"bayesian_search.sqlite3"}',
         load_if_exists=True,
     )
+    study.set_user_attr("context_fingerprint", fingerprint)
     search_start = time.perf_counter()
-    study.optimize(objective, n_trials=max(0, 10 - len(study.trials)))
+    completed = sum(t.state == optuna.trial.TrialState.COMPLETE for t in study.trials)
+    study.optimize(objective, n_trials=max(0, 10 - completed))
     # Trial names differ from sklearn's nested LR parameter name.
     best = study.best_params.copy()
     if winner == "logistic_regression":
         best = {"logisticregression__C": best["C"]}
     tuned = clone(base).set_params(**best)
     tuned_cv = cross(tuned)
+    cv_rows.append({"model": winner + "_tuned", "fold_macro_f1": tuned_cv})
+    dump(OUT / "cross_validation.json", cv_rows)
     evaluate(winner + "_tuned", tuned, tuned_cv)
     study.trials_dataframe().to_csv(OUT / "bayesian_trials.csv", index=False)
-    joblib.dump(
+    save_model(
         {
             "model": tuned,
             "features": FEATURES,
@@ -236,7 +309,6 @@ def main():
             "name": winner + "_tuned",
         },
         ART / "selected.joblib",
-        compress=3,
     )
     dump(
         OUT / "selection.json",
@@ -248,6 +320,8 @@ def main():
             "search_sample_rows": len(sample),
             "search_cap_per_trip": 1200,
             "search_trials": 10,
+            "study_name": study.study_name,
+            "context_fingerprint": fingerprint,
             "search_elapsed_s": time.perf_counter() - search_start,
             "untuned_cv": selected_scores[winner],
             "tuned_full_cv": float(np.mean(tuned_cv)),
@@ -259,6 +333,17 @@ def main():
         },
     )
     dump(OUT / "model_configurations.json", configs)
+    dump(
+        OUT / "artifact_checksums.json",
+        [
+            {
+                "path": str(path.relative_to(ROOT)),
+                "bytes": path.stat().st_size,
+                "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+            }
+            for path in sorted(ART.glob("*.joblib"))
+        ],
+    )
     import matplotlib
 
     matplotlib.use("Agg")

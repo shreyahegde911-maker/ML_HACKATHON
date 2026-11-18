@@ -1,7 +1,25 @@
 /Users/shreyaskm/Documents/ML/hackathon/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
   from starlette.testclient import TestClient as TestClient  # noqa
+test_bad_optional_reference_does_not_discard_prediction (test_api.ApiTests.test_bad_optional_reference_does_not_discard_prediction) ... Reference evaluation unavailable for 00000100: Reference IDs out of bounds
+ok
 test_catalog_and_health (test_api.ApiTests.test_catalog_and_health) ... ok
 test_external_evaluator_root_predicts_without_reference (test_api.ApiTests.test_external_evaluator_root_predicts_without_reference) ... ok
+test_health_checks_model_contents_not_just_file_existence (test_api.ApiTests.test_health_checks_model_contents_not_just_file_existence) ... Model artifact is not ready
+Traceback (most recent call last):
+  File "/Users/shreyaskm/Documents/ML/hackathon/src/pathsnap/api/main.py", line 75, in health
+    loaded = bundle()
+             ^^^^^^^^
+  File "/Users/shreyaskm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1139, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shreyaskm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1143, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/shreyaskm/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/mock.py", line 1198, in _execute_mock_call
+    raise effect
+ValueError: corrupt artifact
+ok
+test_model_cache_reloads_after_artifact_replacement (test_api.ApiTests.test_model_cache_reloads_after_artifact_replacement) ... ok
 test_separate_ui_origin (test_api.ApiTests.test_separate_ui_origin) ... ok
 test_unknown_and_invalid_trips (test_api.ApiTests.test_unknown_and_invalid_trips) ... ok
 test_distant_and_zero_length_labels_are_ineligible (test_data.DataTests.test_distant_and_zero_length_labels_are_ineligible) ... ok
@@ -16,6 +34,8 @@ test_source_order_and_time_anomalies_retained (test_data.DataTests.test_source_o
 test_directed_connectors_and_unreachable_reverse (test_decoder.DecoderTests.test_directed_connectors_and_unreachable_reverse) ... ok
 test_gap_starts_new_route_instead_of_false_bridge (test_decoder.DecoderTests.test_gap_starts_new_route_instead_of_false_bridge) ... ok
 test_no_candidates_preserves_missing_prediction (test_decoder.DecoderTests.test_no_candidates_preserves_missing_prediction) ... ok
+test_revisiting_same_arc_keeps_loop_connectors (test_decoder.DecoderTests.test_revisiting_same_arc_keeps_loop_connectors) ... ok
+test_ui_payload_includes_connector_geometry (test_decoder.DecoderTests.test_ui_payload_includes_connector_geometry) ... ok
 test_viterbi_rejects_disconnected_pointwise_jump (test_decoder.DecoderTests.test_viterbi_rejects_disconnected_pointwise_jump) ... ok
 test_candidate_misses_remain_in_top1_denominator (test_evaluation.EvaluationTests.test_candidate_misses_remain_in_top1_denominator) ... ok
 test_prediction_handles_no_candidates (test_evaluation.EvaluationTests.test_prediction_handles_no_candidates) ... ok
@@ -24,8 +44,18 @@ test_long_segment_fallback_and_integer_ids (test_features.FeatureTests.test_long
 test_missing_reference_arc_is_not_inserted (test_features.FeatureTests.test_missing_reference_arc_is_not_inserted) ... ok
 test_no_candidates_retains_all_reference_misses (test_features.FeatureTests.test_no_candidates_retains_all_reference_misses) ... ok
 test_unreliable_labels_stay_null_and_candidates_unchanged (test_features.FeatureTests.test_unreliable_labels_stay_null_and_candidates_unchanged) ... ok
+test_check_starts_no_services (test_launcher.LauncherTests.test_check_starts_no_services) ... ok
+test_conflicting_port_starts_nothing (test_launcher.LauncherTests.test_conflicting_port_starts_nothing) ... ok
+test_ctrl_c_cleans_up_only_new_processes (test_launcher.LauncherTests.test_ctrl_c_cleans_up_only_new_processes) ... ok
+test_duplicate_ports_rejected_before_setup (test_launcher.LauncherTests.test_duplicate_ports_rejected_before_setup) ... ok
+test_existing_services_are_not_owned_or_stopped (test_launcher.LauncherTests.test_existing_services_are_not_owned_or_stopped) ... ok
+test_failed_start_cleans_up_already_launched_child (test_launcher.LauncherTests.test_failed_start_cleans_up_already_launched_child) ... ok
+test_ui_only_needs_no_environment_install (test_launcher.LauncherTests.test_ui_only_needs_no_environment_install) ... ok
+test_ui_only_validation_does_not_require_models_or_data (test_launcher.LauncherTests.test_ui_only_validation_does_not_require_models_or_data) ... ok
+test_windows_child_gets_its_own_process_group (test_launcher.LauncherTests.test_windows_child_gets_its_own_process_group) ... ok
+test_windows_shutdown_signals_only_owned_group (test_launcher.LauncherTests.test_windows_shutdown_signals_only_owned_group) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.172s
+Ran 39 tests in 0.230s
 
 OK

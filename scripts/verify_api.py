@@ -15,6 +15,7 @@ def main():
     with httpx.Client(base_url=a.url, timeout=180) as client:
         health = client.get("/health")
         health.raise_for_status()
+        assert health.json()["status"] == "ok" and health.json()["model_ready"]
         catalog = client.get("/trips").json()
         assert len(catalog["trips"]) == 10
         assert client.post("/predict", json={"trip_id": "99999999"}).status_code == 404
@@ -28,6 +29,8 @@ def main():
                 data["trip_id"] == tid
                 and len(data["predictions"]) == data["observation_count"]
             )
+            route_arcs = {arc for run in data["route_runs"] for arc in run}
+            assert len(data["decoded_segments"]) == len(route_arcs)
 
             def inspect(value):
                 if isinstance(value, dict):
@@ -54,6 +57,9 @@ def main():
                     "observations": data["observation_count"],
                     "elapsed_s": time.perf_counter() - tick,
                     "metrics": data["metrics"],
+                    "decoder_settings": data["decoder_settings"],
+                    "expanded_route_arcs": len(route_arcs),
+                    "displayed_route_segments": len(data["decoded_segments"]),
                 }
             )
             print(json.dumps(records[-1]), flush=True)

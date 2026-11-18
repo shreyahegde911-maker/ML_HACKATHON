@@ -65,12 +65,14 @@ def payload(trip, pointwise, decoded, metrics, elapsed, mode):
     mask = ((lines.max(axis=1) >= low) & (lines.min(axis=1) <= high)).all(axis=1)
     # Display thinning never changes the actual inference or returned arc IDs.
     roads = lines[mask]
-    stride = max(1, len(roads) // 8000)
+    stride = max(1, (len(roads) + 7999) // 8000)
     roads = roads[::stride]
 
     def selected(frame):
         ids = frame.predicted_arc_id.dropna().astype(int).unique()
         return lines[ids].round(3).tolist()
+
+    route_ids = sorted({arc for run in decoded["route_runs"] for arc in run})
 
     return {
         "trip_id": trip["trip_id"],
@@ -86,9 +88,10 @@ def payload(trip, pointwise, decoded, metrics, elapsed, mode):
         "gps": gps.round(3).tolist(),
         "roads": roads.round(3).tolist(),
         "classifier_segments": selected(pointwise),
-        "decoded_segments": selected(decoded["predictions"]),
+        "decoded_segments": lines[np.asarray(route_ids, dtype=int)].round(3).tolist(),
         "route_runs": decoded["route_runs"],
         "breaks": decoded["breaks"],
+        "decoder_settings": decoded["settings"],
         "predictions": [
             {
                 "observation_id": int(row.observation_id),

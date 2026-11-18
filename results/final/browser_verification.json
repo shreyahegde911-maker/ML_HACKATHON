@@ -9,6 +9,8 @@
     844
   ],
   "trip": "00000000",
+  "ui_url": "http://127.0.0.1:8001/",
+  "api_url": "http://127.0.0.1:8000",
   "ui_request": "real POST /predict",
-  "scope": "single machine, separate UI port 8001 and API port 8000 with CORS; physical LAN laptop not accessed"
+  "scope": "local browser client and separate UI/API processes; physical LAN laptop not accessed"
 }

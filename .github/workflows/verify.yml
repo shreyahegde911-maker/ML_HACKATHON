@@ -1,0 +1,55 @@
+name: Verify macOS and Windows
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OMP_NUM_THREADS: '2'
+  LOKY_MAX_CPU_COUNT: '2'
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install pinned runtime
+        shell: python
+        run: |
+          import os, pathlib, subprocess, sys
+          subprocess.run([sys.executable, '-m', 'venv', '.venv'], check=True)
+          python = str(pathlib.Path('.venv') / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python'))
+          subprocess.run([python, '-m', 'pip', 'install', '-r', 'requirements.txt'], check=True)
+      - name: Unit and platform launcher checks
+        shell: python
+        run: |
+          import os, pathlib, subprocess
+          python = str(pathlib.Path('.venv') / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python'))
+          subprocess.run([python, '-m', 'unittest', 'discover', '-s', 'tests', '-v'], check=True)
+          subprocess.run([python, 'scripts/audit_deliverables.py', '--check'], check=True)
+          env = dict(os.environ, PATHSNAP_NO_PAUSE='1')
+          command = ['cmd', '/d', '/c', 'start.bat', '--check', '--skip-install'] if os.name == 'nt' else ['bash', 'start.sh', '--check', '--skip-install']
+          subprocess.run(command, check=True, env=env)
+      - name: Actual startup, prediction, shutdown
+        shell: python
+        run: |
+          import os, pathlib, subprocess, socket
+          wrapper = ['cmd', '/d', '/c', 'start.bat'] if os.name == 'nt' else ['bash', 'start.sh']
+          subprocess.run(wrapper + ['--smoke-test', '--skip-install', '--api-port', '18080', '--ui-port', '18081'], check=True, env=dict(os.environ, PATHSNAP_NO_PAUSE='1'))
+          for port in (18080, 18081):
+              with socket.socket() as connection:
+                  assert connection.connect_ex(('127.0.0.1', port)) != 0, f'Port {port} leaked'

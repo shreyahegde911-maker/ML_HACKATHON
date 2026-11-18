@@ -134,12 +134,14 @@ python scripts/inspect_data.py --partition all --align
 python scripts/build_candidate_features.py --partition train --references-dir data/derived/reference_labels --reliable-status aligned
 python scripts/build_candidate_features.py --partition validation --references-dir data/derived/reference_labels --reliable-status aligned
 python scripts/build_candidate_features.py --partition student_test --references-dir data/derived/reference_labels --reliable-status aligned
-python scripts/final_experiments.py
+python scripts/final_experiments.py --features cache/candidate_features
 python scripts/eda.py
 python scripts/evaluate_decoder.py
+python scripts/training_diagnostics.py
 python scripts/verify_api.py
 node scripts/verify_browser.cjs
 python scripts/build_report.py
+python scripts/audit_deliverables.py
 ```
 
 The feature artifacts already in `artifacts/features/` can be used directly.
@@ -147,8 +149,15 @@ The original 64/16 training split is recombined into the original 80-trip
 partition for final CV/fitting; one trip lacks eligible labels, leaving 79
 effective fit trips. The ten student-development trips remain outside fitting.
 TPE uses a fixed per-trip capped training sample, then the selected configuration
-is re-evaluated on full-data folds. Delete the archived SQLite study only if an
-explicit fresh search is desired; the script otherwise reuses its ten trials.
+is re-evaluated on full-data folds. Studies are identified by exact input hashes,
+model configuration, fold memberships, sample and script version. An unchanged
+context reuses its ten completed trials; changed data/code creates a new study
+in the same SQLite archive. The final experiment script now computes continuity
+and artifact checksums itself, so the report can be rebuilt without manual steps.
+
+After verification, run `python scripts/audit_deliverables.py` for the generated
+assignment checklist and explicit event-specific pending items. The same audit
+runs in the native macOS/Windows CI workflow.
 
 ## Presentation evidence
 

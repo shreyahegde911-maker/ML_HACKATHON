@@ -1,0 +1,148 @@
+{
+  "status": "passed",
+  "errors": [],
+  "deliverables": [
+    {
+      "deliverable": "Data readers and preprocessing",
+      "status": "present",
+      "files": [
+        "src/pathsnap/data/readers.py",
+        "src/pathsnap/data/alignment.py"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "EDA and geographical visualisation",
+      "status": "present",
+      "files": [
+        "results/final/eda.png",
+        "results/final/graph_connectivity.csv",
+        "results/final/final_folium_map.html",
+        "results/final/folium_map.png"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "Feature generation",
+      "status": "present",
+      "files": [
+        "scripts/build_candidate_features.py",
+        "artifacts/features/train_supervised.csv.gz",
+        "artifacts/features/validation_supervised.csv.gz"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "Five-model comparison",
+      "status": "present",
+      "files": [
+        "results/final/comparison.csv",
+        "results/final/metrics.json",
+        "results/final/model_comparison.png",
+        "results/final/model_configurations.json",
+        "results/final/boosting_loss_histories.png",
+        "results/final/confusion_matrices.png"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "Bayesian optimisation",
+      "status": "present",
+      "files": [
+        "results/final/bayesian_trials.csv",
+        "results/final/bayesian_search.sqlite3",
+        "results/final/selection.json",
+        "results/final/trial_context.json"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "HMM / Viterbi and measured comparison",
+      "status": "present",
+      "files": [
+        "src/pathsnap/decoding/viterbi.py",
+        "configs/decoder.json",
+        "results/final/decoder_comparison.csv",
+        "results/final/decoder_summary.json"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "API and evaluator UI",
+      "status": "present",
+      "files": [
+        "src/pathsnap/api/main.py",
+        "ui/index.html",
+        "results/final/api_verification.json",
+        "results/final/browser_verification.json",
+        "results/final/ui_desktop.png",
+        "results/final/api_response.png"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "Deployment and source instructions",
+      "status": "present",
+      "files": [
+        "start.sh",
+        "start.bat",
+        "requirements.txt",
+        "README.md",
+        "docs/FINAL_PRESENTATION.md"
+      ],
+      "missing": []
+    },
+    {
+      "deliverable": "Consolidated PDF report",
+      "status": "present",
+      "files": [
+        "output/pdf/PathSnap_Technical_Report.pdf"
+      ],
+      "missing": []
+    }
+  ],
+  "models": [
+    {
+      "model": "logistic_regression",
+      "fitted": true,
+      "prediction_check": "passed",
+      "fit_trips": 79,
+      "sha256": "a07e12fd44b07b0ddce8513ee9f339aabaee8aff44ea83b0cac9a1148964e5c0"
+    },
+    {
+      "model": "random_forest",
+      "fitted": true,
+      "prediction_check": "passed",
+      "fit_trips": 79,
+      "sha256": "8a5e1a1b38fe997871e92b238ae25f546fa57a593d920e67f11907243eb29681"
+    },
+    {
+      "model": "decision_tree",
+      "fitted": true,
+      "prediction_check": "passed",
+      "fit_trips": 79,
+      "sha256": "bdad9f390802a85cdc549648e5c6201906a7964b71f3f6c2c33ba3c45b995a32"
+    },
+    {
+      "model": "hist_gradient_boosting",
+      "fitted": true,
+      "prediction_check": "passed",
+      "fit_trips": 79,
+      "sha256": "8f2d9223e9287e2c368da2109fe7a9c6fe2ac180c0b65570ef1247fe4183d0e8"
+    },
+    {
+      "model": "gaussian_naive_bayes",
+      "fitted": true,
+      "prediction_check": "passed",
+      "fit_trips": 79,
+      "sha256": "79279b48f24fe60287d4f7e8bb35990120be4d2956116215148ece5303e715b6"
+    }
+  ],
+  "pdf_pages": 15,
+  "completed_trials": 10,
+  "external_pending": [
+    "Reserved evaluator trip files were not supplied; final evaluator performance remains untested.",
+    "A second physical laptop/LAN and its receiving-terminal screenshot must be demonstrated at the event.",
+    "The team must review and submit its work, and be ready to explain/disclose AI assistance as required by the event policy."
+  ]
+}

@@ -10,7 +10,7 @@
       "trip_id": "00000000",
       "status": 200,
       "observations": 2503,
-      "elapsed_s": 0.8709247910301201,
+      "elapsed_s": 0.8941632080241106,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9500399680255796,
@@ -26,13 +26,20 @@
           "top1_accuracy": 0.9798747763864043,
           "arc_set_f1": 0.9683544303797469
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 201,
+      "displayed_route_segments": 201
     },
     {
       "trip_id": "00000007",
       "status": 200,
       "observations": 1354,
-      "elapsed_s": 0.29279508301988244,
+      "elapsed_s": 0.34619291697163135,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9926090169992609,
@@ -48,13 +55,20 @@
           "top1_accuracy": 1.0,
           "arc_set_f1": 1.0
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 121,
+      "displayed_route_segments": 121
     },
     {
       "trip_id": "00000009",
       "status": 200,
       "observations": 1049,
-      "elapsed_s": 0.5581551669747569,
+      "elapsed_s": 0.5469865420018323,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8406488549618321,
@@ -70,13 +84,20 @@
           "top1_accuracy": 0.9455337690631809,
           "arc_set_f1": 0.943089430894309
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 491,
+      "displayed_route_segments": 491
     },
     {
       "trip_id": "00000040",
       "status": 200,
       "observations": 2995,
-      "elapsed_s": 0.8131933329859748,
+      "elapsed_s": 0.8514609170379117,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9452237808951236,
@@ -92,13 +113,20 @@
           "top1_accuracy": 0.9968012794882047,
           "arc_set_f1": 0.9861932938856016
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 315,
+      "displayed_route_segments": 315
     },
     {
       "trip_id": "00000052",
       "status": 200,
       "observations": 262,
-      "elapsed_s": 0.10342950001358986,
+      "elapsed_s": 0.10698279202915728,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.9386973180076629,
@@ -114,13 +142,20 @@
           "top1_accuracy": 1.0,
           "arc_set_f1": 1.0
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 93,
+      "displayed_route_segments": 93
     },
     {
       "trip_id": "00000056",
       "status": 200,
       "observations": 3958,
-      "elapsed_s": 1.8482770419795997,
+      "elapsed_s": 1.8871568749891594,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8615112458933536,
@@ -136,13 +171,20 @@
           "top1_accuracy": 0.9985652797704447,
           "arc_set_f1": 0.996
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 1081,
+      "displayed_route_segments": 1081
     },
     {
       "trip_id": "00000065",
       "status": 200,
       "observations": 768,
-      "elapsed_s": 0.41051408305065706,
+      "elapsed_s": 0.36935204098699614,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8707571801566579,
@@ -158,13 +200,20 @@
           "top1_accuracy": 0.9378238341968912,
           "arc_set_f1": 0.9859154929577465
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 152,
+      "displayed_route_segments": 152
     },
     {
       "trip_id": "00000076",
       "status": 200,
       "observations": 1486,
-      "elapsed_s": 1.0855113750440069,
+      "elapsed_s": 1.225623291975353,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8247978436657682,
@@ -180,13 +229,20 @@
           "top1_accuracy": 0.9924717691342535,
           "arc_set_f1": 0.9754768392370572
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 464,
+      "displayed_route_segments": 464
     },
     {
       "trip_id": "00000077",
       "status": 200,
       "observations": 3911,
-      "elapsed_s": 1.1738359580049291,
+      "elapsed_s": 1.78606083401246,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8664961636828644,
@@ -202,13 +258,20 @@
           "top1_accuracy": 0.868595825426945,
           "arc_set_f1": 0.9508196721311475
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 314,
+      "displayed_route_segments": 314
     },
     {
       "trip_id": "00000091",
       "status": 200,
       "observations": 874,
-      "elapsed_s": 0.3857408339972608,
+      "elapsed_s": 0.7972268749726936,
       "metrics": {
         "classifier": {
           "direct_step_continuity": 0.8224513172966781,
@@ -224,7 +287,14 @@
           "top1_accuracy": 0.9547826086956521,
           "arc_set_f1": 0.9800796812749004
         }
-      }
+      },
+      "decoder_settings": {
+        "beta_m": 10.0,
+        "gap_s": 30.0,
+        "max_speed_mps": 60.0
+      },
+      "expanded_route_arcs": 241,
+      "displayed_route_segments": 241
     }
   ],
   "unknown_trip_status": 404,

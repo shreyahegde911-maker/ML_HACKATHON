@@ -189,15 +189,24 @@ def decode(
     runs = []
     run = []
     last = None
+    last_observation = None
     for i, arc in enumerate(predicted):
         if arc < 0 or int(obs.observation_id.iloc[i]) in boundary:
             if run:
                 runs.append(run)
             run = []
             last = None
+            last_observation = None
         if arc < 0:
             continue
-        if last is not None and arc != last:
+        # Returning to an earlier point on the same directed arc may require a
+        # real loop. Keep that connector instead of collapsing repeated IDs.
+        loop = False
+        if last == arc and last_observation is not None:
+            previous = roads.fractions(points[last_observation], np.array([arc]))[0]
+            current = roads.fractions(points[i], np.array([arc]))[0]
+            loop = (current - previous) * roads.lengths[arc] < -25
+        if last is not None and (arc != last or loop):
             connector = roads.path(roads.edges[last, 1], roads.edges[arc, 0])
             if connector is None:
                 if run:
@@ -205,9 +214,10 @@ def decode(
                 run = []
             else:
                 run.extend(connector)
-        if not run or run[-1] != arc:
+        if loop or not run or run[-1] != arc:
             run.append(int(arc))
         last = arc
+        last_observation = i
     if run:
         runs.append(run)
     frame = pd.DataFrame(

@@ -1,9 +1,9 @@
 # Verification
 
-Run python -m unittest discover -s tests -v. The 34 tests include the 24 core
-reader, model-evaluation, decoder and API checks, plus 10 launcher checks for
-setup, conflicting ports, ownership/cleanup, UI-only mode and Windows process
-groups. Real all-ten-trip HTTP verification and browser checks are separate
-scripts with retained evidence under results/final. Native Windows execution
-was not available during launcher verification; the batch wrapper shares the
-same standard-library runner as the tested shell launcher.
+Run python -m unittest discover -s tests -v. The suite covers data readers,
+model-evaluation, decoder loops/connectors, API/reference-error handling, model
+reload/readiness, and launcher setup/ownership/Windows process groups. The
+executed count is recorded in results/final/test_results.txt rather than fixed
+here. Real all-ten-trip HTTP and browser checks have separate evidence under
+results/final. Native Windows/macOS checks are configured in
+.github/workflows/verify.yml; inspect the corresponding GitHub Actions results.

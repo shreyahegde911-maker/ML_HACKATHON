@@ -12,6 +12,7 @@ import time
 from urllib.error import URLError
 from urllib.parse import urlencode
 from urllib.request import urlopen
+from urllib.request import Request
 import webbrowser
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -182,6 +183,11 @@ def main(argv=None):
     )
     parser.add_argument("--no-browser", action="store_true")
     parser.add_argument(
+        "--smoke-test",
+        action="store_true",
+        help="Start, verify a prediction, and stop launcher-owned services",
+    )
+    parser.add_argument(
         "--skip-install",
         action="store_true",
         help="Fail instead of installing dependencies",
@@ -258,6 +264,29 @@ def main(argv=None):
             else f"http://localhost:{args.ui_port}/?" + urlencode({"api": api})
         )
         say(f"Ready: {url}")
+        if args.smoke_test:
+            if not args.ui_only:
+                endpoint = f"http://127.0.0.1:{args.api_port}"
+                with urlopen(endpoint + "/trips", timeout=10) as response:
+                    trip_id = json.load(response)["trips"][0]
+                request = Request(
+                    endpoint + "/predict",
+                    data=json.dumps({"trip_id": trip_id}).encode(),
+                    headers={"Content-Type": "application/json"},
+                )
+                with urlopen(request, timeout=120) as response:
+                    prediction = json.load(response)
+                if prediction.get("trip_id") != trip_id or len(
+                    prediction.get("predictions", [])
+                ) != prediction.get("observation_count"):
+                    raise RuntimeError(
+                        "Prediction smoke test returned inconsistent observations"
+                    )
+                say(
+                    f"Prediction smoke test passed: {trip_id}, {prediction['observation_count']} observations."
+                )
+            say("Startup/shutdown smoke test passed.")
+            return 0
         if args.ui_only:
             say(
                 "On Laptop 2, set the API address to http://LAPTOP1_LAN_IP:8000 and click Connect."
