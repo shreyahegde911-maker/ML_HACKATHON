@@ -10,9 +10,21 @@ from unittest.mock import MagicMock, patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts import launch
+from scripts.serve_ui import UIServer
 
 
 class LauncherTests(unittest.TestCase):
+    def test_ui_binding_does_not_require_reverse_dns(self):
+        server = object.__new__(UIServer)
+        server.server_address = ("0.0.0.0", 8001)
+        with patch("scripts.serve_ui.TCPServer.server_bind") as bind, patch(
+            "socket.getfqdn", side_effect=OSError("DNS unavailable")
+        ) as dns:
+            server.server_bind()
+        bind.assert_called_once_with(server)
+        dns.assert_not_called()
+        self.assertEqual((server.server_name, server.server_port), ("0.0.0.0", 8001))
+
     def invoke(self, args):
         with contextlib.redirect_stdout(io.StringIO()):
             return launch.main(args)

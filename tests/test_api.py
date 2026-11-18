@@ -84,7 +84,9 @@ class ApiTests(unittest.TestCase):
                 self.assertEqual(len(data["predictions"]), 2)
                 self.assertIsNone(data["metrics"])
                 self.assertIn("evaluation_warning", data)
-                self.assertNotIn("999999", response.text)
+                self.assertEqual({p["arc_id"] for p in data["predictions"]}, {0})
+                self.assertNotIn("reference_arc_id", data)
+                self.assertNotIn("999999", data["evaluation_warning"])
 
     def test_health_checks_model_contents_not_just_file_existence(self):
         with patch(

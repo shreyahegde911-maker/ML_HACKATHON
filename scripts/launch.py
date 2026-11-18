@@ -232,13 +232,11 @@ def main(argv=None):
                     args.ui_port,
                     [
                         python,
-                        "-m",
-                        "http.server",
-                        str(args.ui_port),
-                        "--bind",
+                        str(ROOT / "scripts/serve_ui.py"),
+                        "--host",
                         "0.0.0.0",
-                        "--directory",
-                        str(ROOT / "ui"),
+                        "--port",
+                        str(args.ui_port),
                     ],
                 )
             )

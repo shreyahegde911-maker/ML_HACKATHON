@@ -50,12 +50,13 @@ test_ctrl_c_cleans_up_only_new_processes (test_launcher.LauncherTests.test_ctrl_
 test_duplicate_ports_rejected_before_setup (test_launcher.LauncherTests.test_duplicate_ports_rejected_before_setup) ... ok
 test_existing_services_are_not_owned_or_stopped (test_launcher.LauncherTests.test_existing_services_are_not_owned_or_stopped) ... ok
 test_failed_start_cleans_up_already_launched_child (test_launcher.LauncherTests.test_failed_start_cleans_up_already_launched_child) ... ok
+test_ui_binding_does_not_require_reverse_dns (test_launcher.LauncherTests.test_ui_binding_does_not_require_reverse_dns) ... ok
 test_ui_only_needs_no_environment_install (test_launcher.LauncherTests.test_ui_only_needs_no_environment_install) ... ok
 test_ui_only_validation_does_not_require_models_or_data (test_launcher.LauncherTests.test_ui_only_validation_does_not_require_models_or_data) ... ok
 test_windows_child_gets_its_own_process_group (test_launcher.LauncherTests.test_windows_child_gets_its_own_process_group) ... ok
 test_windows_shutdown_signals_only_owned_group (test_launcher.LauncherTests.test_windows_shutdown_signals_only_owned_group) ... ok
 
 ----------------------------------------------------------------------
-Ran 39 tests in 0.230s
+Ran 40 tests in 0.214s
 
 OK
