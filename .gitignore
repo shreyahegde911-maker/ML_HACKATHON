@@ -21,3 +21,6 @@ env/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Regenerate derived reference labels with scripts/inspect_data.py
+data/derived/

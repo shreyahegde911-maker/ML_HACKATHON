@@ -1,0 +1,49 @@
+{
+  "train/00000001": {
+    "observation_count": 1315,
+    "node_count": 88809,
+    "arc_count": 165790,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 16.0,
+    "one_second_steps": 1289,
+    "timestamp_steps": 1314,
+    "isolated_node_count": 0,
+    "longitude_min": 8.570524,
+    "longitude_max": 8.64786,
+    "latitude_min": 49.844053,
+    "latitude_max": 50.211882,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 40975
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1687371
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1948474
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3119
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1033,
+      "ambiguous_geometry": 282
+    }
+  }
+}

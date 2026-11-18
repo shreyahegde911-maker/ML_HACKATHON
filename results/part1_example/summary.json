@@ -1,0 +1,37 @@
+{
+  "trips": 1,
+  "observations": 1315,
+  "reference_entries": 525,
+  "reference_discontinuities": 0,
+  "nonpositive_time_steps": 0,
+  "max_gap_s": 16.0,
+  "partition_trip_counts": {
+    "train": 1
+  },
+  "raw_files_verified_unchanged": 4,
+  "elapsed_s": 0.354,
+  "label_source": "provisional_ordered_reference_alignment; NOT official observation-level ground truth",
+  "alignment_settings": {
+    "max_distance_m": 75,
+    "ambiguity_margin_m": 5,
+    "gap_threshold_s": 30,
+    "max_progress_speed_mps": 60,
+    "distance_scale_m": 25,
+    "progress_penalty": 0.05
+  },
+  "command": [
+    "python",
+    "scripts/inspect_data.py",
+    "--data-root",
+    "Student folder",
+    "--partition",
+    "train",
+    "--trip",
+    "00000001",
+    "--align",
+    "--output-dir",
+    "results/part1_example"
+  ],
+  "provisional_aligned": 1033,
+  "provisional_flagged": 282
+}

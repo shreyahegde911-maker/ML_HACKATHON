@@ -1,3 +1,7 @@
 # Data utilities
 
-Reserved for raw trip readers, schema checks, data validation, and preprocessing utilities. Preserve source files and make transformations explicit and reproducible.
+Implemented readers, validation, per-trip metric projection, reproducible trip
+splits and separate provisional reference alignment.
+
+See `docs/data_assumptions.md` for the exact Part 2 interface, commands, status
+filtering and label limitations. `load_trip` never reads a reference route.

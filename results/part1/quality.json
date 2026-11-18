@@ -1,0 +1,4636 @@
+{
+  "train/00000001": {
+    "observation_count": 1315,
+    "node_count": 88809,
+    "arc_count": 165790,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 16.0,
+    "one_second_steps": 1289,
+    "timestamp_steps": 1314,
+    "isolated_node_count": 0,
+    "longitude_min": 8.570524,
+    "longitude_max": 8.64786,
+    "latitude_min": 49.844053,
+    "latitude_max": 50.211882,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 40975
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1687371
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1948474
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3119
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1033,
+      "ambiguous_geometry": 282
+    }
+  },
+  "train/00000002": {
+    "observation_count": 7243,
+    "node_count": 7936,
+    "arc_count": 16139,
+    "large_gap_observation_ids": [
+      187,
+      3904,
+      3914,
+      3915,
+      3918,
+      3934,
+      3939,
+      5813,
+      5880,
+      6476
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 160.0,
+    "one_second_steps": 7057,
+    "timestamp_steps": 7242,
+    "isolated_node_count": 0,
+    "longitude_min": 10.999961,
+    "longitude_max": 11.050902,
+    "latitude_min": 47.658344,
+    "latitude_max": 47.695459,
+    "warnings": [
+      "10 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 238085
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 158720
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 156519
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1398
+      }
+    },
+    "reference_discontinuity_positions": [
+      54
+    ],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 3192,
+      "aligned": 3061,
+      "ambiguous_geometry|too_far": 535,
+      "too_far|route_discontinuity": 219,
+      "route_discontinuity": 96,
+      "ambiguous_geometry|route_discontinuity": 72,
+      "ambiguous_geometry|too_far|route_discontinuity": 41,
+      "gap_boundary": 15,
+      "implausible_progress": 6,
+      "ambiguous_geometry|gap_boundary": 4,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000003": {
+    "observation_count": 821,
+    "node_count": 9138,
+    "arc_count": 18028,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 817,
+    "timestamp_steps": 820,
+    "isolated_node_count": 0,
+    "longitude_min": 37.154202,
+    "longitude_max": 37.201595,
+    "latitude_min": 55.977135,
+    "latitude_max": 56.007585,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 26164
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 182760
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 175733
+      },
+      "route": {
+        "exists": true,
+        "bytes": 411
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 586,
+      "ambiguous_geometry": 235
+    }
+  },
+  "train/00000004": {
+    "observation_count": 1064,
+    "node_count": 7350,
+    "arc_count": 15499,
+    "large_gap_observation_ids": [
+      27,
+      29
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 51.0,
+    "one_second_steps": 572,
+    "timestamp_steps": 1063,
+    "isolated_node_count": 0,
+    "longitude_min": 12.34228,
+    "longitude_max": 12.459615,
+    "latitude_min": 52.590308,
+    "latitude_max": 52.71896,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 34982
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 147000
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 149738
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1582
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 747,
+      "ambiguous_geometry": 313,
+      "ambiguous_geometry|gap_boundary": 4
+    }
+  },
+  "train/00000005": {
+    "observation_count": 1045,
+    "node_count": 898,
+    "arc_count": 1579,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1044,
+    "timestamp_steps": 1044,
+    "isolated_node_count": 0,
+    "longitude_min": 35.485577,
+    "longitude_max": 35.544315,
+    "latitude_min": 49.357581,
+    "latitude_max": 49.613085,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32636",
+      "epsg": 32636,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 33378
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 17960
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 12351
+      },
+      "route": {
+        "exists": true,
+        "bytes": 421
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 980,
+      "ambiguous_geometry": 65
+    }
+  },
+  "train/00000006": {
+    "observation_count": 1450,
+    "node_count": 3259,
+    "arc_count": 6757,
+    "large_gap_observation_ids": [
+      274,
+      461,
+      570
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 301.0,
+    "one_second_steps": 1437,
+    "timestamp_steps": 1449,
+    "isolated_node_count": 0,
+    "longitude_min": 37.276002,
+    "longitude_max": 37.317675,
+    "latitude_min": 55.429164,
+    "latitude_max": 55.487229,
+    "warnings": [
+      "3 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 47576
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 65180
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 62914
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1184
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 960,
+      "aligned": 484,
+      "ambiguous_geometry|gap_boundary": 5,
+      "gap_boundary": 1
+    }
+  },
+  "train/00000008": {
+    "observation_count": 3093,
+    "node_count": 4995,
+    "arc_count": 10421,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 3091,
+    "timestamp_steps": 3092,
+    "isolated_node_count": 0,
+    "longitude_min": -86.58486,
+    "longitude_max": -86.567487,
+    "latitude_min": 34.733275,
+    "latitude_max": 34.753704,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32616",
+      "epsg": 32616,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 104055
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 104895
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 99150
+      },
+      "route": {
+        "exists": true,
+        "bytes": 832
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 1632,
+      "aligned": 1358,
+      "ambiguous_geometry|repeated_arc_occurrence": 82,
+      "repeated_arc_occurrence": 13,
+      "ambiguous_geometry|implausible_progress": 8
+    }
+  },
+  "train/00000010": {
+    "observation_count": 2711,
+    "node_count": 8502,
+    "arc_count": 15715,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 2710,
+    "timestamp_steps": 2710,
+    "isolated_node_count": 0,
+    "longitude_min": 37.357893,
+    "longitude_max": 37.39479,
+    "latitude_min": 55.786261,
+    "latitude_max": 55.832857,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 88356
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 170040
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 153188
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1042
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 1505,
+      "aligned": 1204,
+      "implausible_progress": 1,
+      "ambiguous_geometry|implausible_progress": 1
+    }
+  },
+  "train/00000011": {
+    "observation_count": 2828,
+    "node_count": 2649,
+    "arc_count": 5393,
+    "large_gap_observation_ids": [
+      1601
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 909.0,
+    "one_second_steps": 2826,
+    "timestamp_steps": 2827,
+    "isolated_node_count": 0,
+    "longitude_min": 59.647057,
+    "longitude_max": 60.016866,
+    "latitude_min": 56.041788,
+    "latitude_max": 56.067535,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32640",
+      "epsg": 32640,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 92217
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 52980
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 49400
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2167
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 2826,
+      "ambiguous_geometry|gap_boundary": 2
+    }
+  },
+  "train/00000012": {
+    "observation_count": 1608,
+    "node_count": 16376,
+    "arc_count": 38599,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 1606,
+    "timestamp_steps": 1607,
+    "isolated_node_count": 0,
+    "longitude_min": 44.044515,
+    "longitude_max": 44.389906,
+    "latitude_min": 36.175914,
+    "latitude_max": 36.263587,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32638",
+      "epsg": 32638,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 51960
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 327520
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 410744
+      },
+      "route": {
+        "exists": true,
+        "bytes": 859
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1460,
+      "ambiguous_geometry": 148
+    }
+  },
+  "train/00000013": {
+    "observation_count": 2580,
+    "node_count": 155003,
+    "arc_count": 307392,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 8.0,
+    "one_second_steps": 2486,
+    "timestamp_steps": 2579,
+    "isolated_node_count": 0,
+    "longitude_min": 1.464353,
+    "longitude_max": 2.137165,
+    "latitude_min": 43.636188,
+    "latitude_max": 43.927134,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 81487
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 2945057
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 3856964
+      },
+      "route": {
+        "exists": true,
+        "bytes": 4835
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1997,
+      "ambiguous_geometry": 499,
+      "implausible_progress": 71,
+      "ambiguous_geometry|implausible_progress": 13
+    }
+  },
+  "train/00000014": {
+    "observation_count": 448,
+    "node_count": 4067,
+    "arc_count": 8288,
+    "large_gap_observation_ids": [
+      352
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 72.0,
+    "one_second_steps": 368,
+    "timestamp_steps": 447,
+    "isolated_node_count": 0,
+    "longitude_min": 39.170811,
+    "longitude_max": 39.201605,
+    "latitude_min": 51.715319,
+    "latitude_max": 51.733034,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 14254
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 81340
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 78386
+      },
+      "route": {
+        "exists": true,
+        "bytes": 743
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 244,
+      "ambiguous_geometry": 202,
+      "ambiguous_geometry|gap_boundary": 1,
+      "gap_boundary": 1
+    }
+  },
+  "train/00000016": {
+    "observation_count": 1305,
+    "node_count": 8205,
+    "arc_count": 15098,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1304,
+    "timestamp_steps": 1304,
+    "isolated_node_count": 0,
+    "longitude_min": 37.360295,
+    "longitude_max": 37.39486,
+    "latitude_min": 55.785202,
+    "latitude_max": 55.832737,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 41958
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 164100
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 147040
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1026
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 729,
+      "ambiguous_geometry": 576
+    }
+  },
+  "train/00000018": {
+    "observation_count": 379,
+    "node_count": 5980,
+    "arc_count": 11545,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 3.0,
+    "one_second_steps": 340,
+    "timestamp_steps": 378,
+    "isolated_node_count": 0,
+    "longitude_min": -8.498238,
+    "longitude_max": -8.448941,
+    "latitude_min": 40.584524,
+    "latitude_max": 40.595446,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32629",
+      "epsg": 32629,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 12039
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 119600
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 111282
+      },
+      "route": {
+        "exists": true,
+        "bytes": 812
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 221,
+      "ambiguous_geometry": 140,
+      "ambiguous_geometry|repeated_arc_occurrence": 18
+    }
+  },
+  "train/00000019": {
+    "observation_count": 2354,
+    "node_count": 52694,
+    "arc_count": 108517,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 2353,
+    "timestamp_steps": 2353,
+    "isolated_node_count": 0,
+    "longitude_min": 6.893696,
+    "longitude_max": 7.382203,
+    "latitude_min": 52.105923,
+    "latitude_max": 52.223884,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 74221
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1001186
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1253806
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3258
+      }
+    },
+    "reference_discontinuity_positions": [
+      95,
+      152,
+      301
+    ],
+    "alignment_status_counts": {
+      "aligned": 1587,
+      "ambiguous_geometry": 688,
+      "route_discontinuity": 47,
+      "too_far|route_discontinuity": 30,
+      "ambiguous_geometry|route_discontinuity": 2
+    }
+  },
+  "train/00000020": {
+    "observation_count": 2353,
+    "node_count": 2739,
+    "arc_count": 5958,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 2352,
+    "timestamp_steps": 2352,
+    "isolated_node_count": 0,
+    "longitude_min": 24.354626,
+    "longitude_max": 24.595931,
+    "latitude_min": 52.56,
+    "latitude_max": 52.764968,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32635",
+      "epsg": 32635,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 76542
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 54780
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 54360
+      },
+      "route": {
+        "exists": true,
+        "bytes": 664
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2026,
+      "ambiguous_geometry": 300,
+      "ambiguous_geometry|too_far": 25,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000021": {
+    "observation_count": 15783,
+    "node_count": 732,
+    "arc_count": 1510,
+    "large_gap_observation_ids": [
+      184,
+      7869
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2161.0,
+    "one_second_steps": 15776,
+    "timestamp_steps": 15782,
+    "isolated_node_count": 0,
+    "longitude_min": 106.377397,
+    "longitude_max": 106.733064,
+    "latitude_min": 15.345165,
+    "latitude_max": 15.445932,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32648",
+      "epsg": 32648,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 544091
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 15372
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 11638
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1112
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 14289,
+      "ambiguous_geometry": 1482,
+      "implausible_progress": 7,
+      "gap_boundary": 4,
+      "ambiguous_geometry|implausible_progress": 1
+    }
+  },
+  "train/00000022": {
+    "observation_count": 474,
+    "node_count": 9607,
+    "arc_count": 18982,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 22.0,
+    "one_second_steps": 251,
+    "timestamp_steps": 473,
+    "isolated_node_count": 0,
+    "longitude_min": -3.629593,
+    "longitude_max": -3.538592,
+    "latitude_min": 47.810669,
+    "latitude_max": 47.888872,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 15283
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 192140
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 185655
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1961
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 311,
+      "aligned": 163
+    }
+  },
+  "train/00000024": {
+    "observation_count": 801,
+    "node_count": 25782,
+    "arc_count": 51609,
+    "large_gap_observation_ids": [
+      142,
+      155
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 458.0,
+    "one_second_steps": 777,
+    "timestamp_steps": 800,
+    "isolated_node_count": 0,
+    "longitude_min": 8.547344,
+    "longitude_max": 8.618828,
+    "latitude_min": 49.148019,
+    "latitude_max": 49.359556,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 25266
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 489858
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 572579
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1278
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 654,
+      "ambiguous_geometry": 143,
+      "gap_boundary": 3,
+      "ambiguous_geometry|gap_boundary": 1
+    }
+  },
+  "train/00000025": {
+    "observation_count": 1179,
+    "node_count": 38035,
+    "arc_count": 85639,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 817,
+    "timestamp_steps": 1178,
+    "isolated_node_count": 0,
+    "longitude_min": -100.418538,
+    "longitude_max": -100.268049,
+    "latitude_min": 25.685408,
+    "latitude_max": 25.76763,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32614",
+      "epsg": 32614,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 40421
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 836770
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 981332
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1608
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 908,
+      "ambiguous_geometry": 271
+    }
+  },
+  "train/00000026": {
+    "observation_count": 361,
+    "node_count": 2580,
+    "arc_count": 5043,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 17.0,
+    "one_second_steps": 279,
+    "timestamp_steps": 360,
+    "isolated_node_count": 0,
+    "longitude_min": -80.442099,
+    "longitude_max": -80.41465,
+    "latitude_min": 37.144431,
+    "latitude_max": 37.155287,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32617",
+      "epsg": 32617,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 11892
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 54180
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 46174
+      },
+      "route": {
+        "exists": true,
+        "bytes": 926
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 283,
+      "aligned": 76,
+      "ambiguous_geometry|implausible_progress": 1,
+      "implausible_progress": 1
+    }
+  },
+  "train/00000027": {
+    "observation_count": 694,
+    "node_count": 2756,
+    "arc_count": 5588,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 679,
+    "timestamp_steps": 693,
+    "isolated_node_count": 0,
+    "longitude_min": 18.898135,
+    "longitude_max": 18.940049,
+    "latitude_min": 49.527172,
+    "latitude_max": 49.555234,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32634",
+      "epsg": 32634,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 22100
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 55120
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 51182
+      },
+      "route": {
+        "exists": true,
+        "bytes": 567
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 445,
+      "ambiguous_geometry": 249
+    }
+  },
+  "train/00000028": {
+    "observation_count": 3565,
+    "node_count": 60628,
+    "arc_count": 127216,
+    "large_gap_observation_ids": [
+      589,
+      2131,
+      2144,
+      3263
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 196.0,
+    "one_second_steps": 3550,
+    "timestamp_steps": 3564,
+    "isolated_node_count": 0,
+    "longitude_min": 60.309682,
+    "longitude_max": 61.41359,
+    "latitude_min": 54.922289,
+    "latitude_max": 55.142105,
+    "warnings": [
+      "4 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32641",
+      "epsg": 32641,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 116747
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1212560
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1481664
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3491
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2947,
+      "ambiguous_geometry": 594,
+      "ambiguous_geometry|too_far": 14,
+      "gap_boundary": 5,
+      "ambiguous_geometry|gap_boundary": 3,
+      "ambiguous_geometry|too_far|implausible_progress": 2
+    }
+  },
+  "train/00000029": {
+    "observation_count": 733,
+    "node_count": 10825,
+    "arc_count": 20868,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 732,
+    "timestamp_steps": 732,
+    "isolated_node_count": 0,
+    "longitude_min": 37.322391,
+    "longitude_max": 37.391779,
+    "latitude_min": 55.790669,
+    "latitude_max": 55.821113,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 23348
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 216500
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 207622
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1027
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 490,
+      "ambiguous_geometry": 243
+    }
+  },
+  "train/00000031": {
+    "observation_count": 4245,
+    "node_count": 59059,
+    "arc_count": 125831,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 4244,
+    "timestamp_steps": 4244,
+    "isolated_node_count": 0,
+    "longitude_min": 50.18354,
+    "longitude_max": 50.764836,
+    "latitude_min": 53.207514,
+    "latitude_max": 53.473253,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32639",
+      "epsg": 32639,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 138978
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1181180
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1464496
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2507
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 3466,
+      "ambiguous_geometry": 777,
+      "implausible_progress": 2
+    }
+  },
+  "train/00000032": {
+    "observation_count": 2464,
+    "node_count": 124540,
+    "arc_count": 259437,
+    "large_gap_observation_ids": [
+      130
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 41.0,
+    "one_second_steps": 2365,
+    "timestamp_steps": 2463,
+    "isolated_node_count": 0,
+    "longitude_min": 12.398139,
+    "longitude_max": 13.315247,
+    "latitude_min": 51.883443,
+    "latitude_max": 52.308951,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 80433
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 2490800
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 3171304
+      },
+      "route": {
+        "exists": true,
+        "bytes": 4665
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1974,
+      "ambiguous_geometry": 486,
+      "gap_boundary": 2,
+      "implausible_progress": 2
+    }
+  },
+  "train/00000033": {
+    "observation_count": 5844,
+    "node_count": 3340,
+    "arc_count": 6360,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 3.0,
+    "one_second_steps": 5436,
+    "timestamp_steps": 5843,
+    "isolated_node_count": 0,
+    "longitude_min": 18.694146,
+    "longitude_max": 18.718013,
+    "latitude_min": 50.018685,
+    "latitude_max": 50.045012,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32634",
+      "epsg": 32634,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 191805
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 66800
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 59740
+      },
+      "route": {
+        "exists": true,
+        "bytes": 818
+      }
+    },
+    "reference_discontinuity_positions": [
+      165
+    ],
+    "alignment_status_counts": {
+      "too_far|route_discontinuity": 3012,
+      "aligned": 1499,
+      "route_discontinuity": 929,
+      "ambiguous_geometry": 394,
+      "ambiguous_geometry|implausible_progress": 4,
+      "route_discontinuity|implausible_progress": 4,
+      "implausible_progress": 2
+    }
+  },
+  "train/00000034": {
+    "observation_count": 3614,
+    "node_count": 19597,
+    "arc_count": 40971,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 15.0,
+    "one_second_steps": 3525,
+    "timestamp_steps": 3613,
+    "isolated_node_count": 0,
+    "longitude_min": 44.260728,
+    "longitude_max": 44.510744,
+    "latitude_min": 40.188342,
+    "latitude_max": 40.364683,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32638",
+      "epsg": 32638,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 118210
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 391940
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 444807
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2413
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2658,
+      "ambiguous_geometry": 954,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000035": {
+    "observation_count": 1643,
+    "node_count": 21126,
+    "arc_count": 35212,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1642,
+    "timestamp_steps": 1642,
+    "isolated_node_count": 0,
+    "longitude_min": 12.51709,
+    "longitude_max": 12.617445,
+    "latitude_min": 41.849469,
+    "latitude_max": 41.872269,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 53112
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 422520
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 386180
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2196
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 833,
+      "ambiguous_geometry": 810
+    }
+  },
+  "train/00000036": {
+    "observation_count": 1368,
+    "node_count": 4528,
+    "arc_count": 9619,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1367,
+    "timestamp_steps": 1367,
+    "isolated_node_count": 0,
+    "longitude_min": 30.074804,
+    "longitude_max": 30.159635,
+    "latitude_min": 59.557742,
+    "latitude_max": 59.600565,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32636",
+      "epsg": 32636,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 44037
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 90560
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 91049
+      },
+      "route": {
+        "exists": true,
+        "bytes": 742
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1021,
+      "ambiguous_geometry": 345,
+      "implausible_progress": 2
+    }
+  },
+  "train/00000037": {
+    "observation_count": 677,
+    "node_count": 9472,
+    "arc_count": 21744,
+    "large_gap_observation_ids": [
+      249,
+      318,
+      412
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 52.0,
+    "one_second_steps": 635,
+    "timestamp_steps": 676,
+    "isolated_node_count": 0,
+    "longitude_min": 137.197657,
+    "longitude_max": 137.237029,
+    "latitude_min": 36.667355,
+    "latitude_max": 36.695646,
+    "warnings": [
+      "3 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32653",
+      "epsg": 32653,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 22263
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 198912
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 212665
+      },
+      "route": {
+        "exists": true,
+        "bytes": 834
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 434,
+      "ambiguous_geometry": 237,
+      "gap_boundary": 4,
+      "ambiguous_geometry|gap_boundary": 2
+    }
+  },
+  "train/00000038": {
+    "observation_count": 1287,
+    "node_count": 21046,
+    "arc_count": 42026,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 20.0,
+    "one_second_steps": 1240,
+    "timestamp_steps": 1286,
+    "isolated_node_count": 0,
+    "longitude_min": 27.449035,
+    "longitude_max": 27.528154,
+    "latitude_min": 53.843719,
+    "latitude_max": 53.913008,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32635",
+      "epsg": 32635,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 41486
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 420920
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 458962
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1189
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 854,
+      "ambiguous_geometry": 433
+    }
+  },
+  "train/00000039": {
+    "observation_count": 363,
+    "node_count": 1185,
+    "arc_count": 2388,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 10.0,
+    "one_second_steps": 211,
+    "timestamp_steps": 362,
+    "isolated_node_count": 0,
+    "longitude_min": 24.400559,
+    "longitude_max": 24.482813,
+    "latitude_min": 60.417067,
+    "latitude_max": 60.455491,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32635",
+      "epsg": 32635,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 11566
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 23700
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 19384
+      },
+      "route": {
+        "exists": true,
+        "bytes": 744
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 195,
+      "aligned": 168
+    }
+  },
+  "train/00000041": {
+    "observation_count": 1019,
+    "node_count": 7837,
+    "arc_count": 14317,
+    "large_gap_observation_ids": [
+      887
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 89.0,
+    "one_second_steps": 1009,
+    "timestamp_steps": 1018,
+    "isolated_node_count": 0,
+    "longitude_min": -8.751518,
+    "longitude_max": -8.657987,
+    "latitude_min": 40.596287,
+    "latitude_max": 40.631925,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32629",
+      "epsg": 32629,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 32621
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 156740
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 139754
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1724
+      }
+    },
+    "reference_discontinuity_positions": [
+      13
+    ],
+    "alignment_status_counts": {
+      "aligned": 596,
+      "ambiguous_geometry": 386,
+      "route_discontinuity": 31,
+      "ambiguous_geometry|route_discontinuity": 2,
+      "ambiguous_geometry|gap_boundary": 2,
+      "ambiguous_geometry|implausible_progress": 1,
+      "implausible_progress": 1
+    }
+  },
+  "train/00000042": {
+    "observation_count": 7739,
+    "node_count": 49376,
+    "arc_count": 101128,
+    "large_gap_observation_ids": [
+      1883,
+      1885,
+      1886,
+      1887,
+      1888,
+      1890,
+      1892,
+      1893,
+      1896,
+      1898,
+      7237,
+      7238,
+      7239,
+      7240,
+      7242,
+      7247,
+      7248,
+      7249,
+      7250,
+      7251,
+      7253,
+      7254
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 670.0,
+    "one_second_steps": 7657,
+    "timestamp_steps": 7738,
+    "isolated_node_count": 0,
+    "longitude_min": 123.911786,
+    "longitude_max": 124.050254,
+    "latitude_min": 10.335168,
+    "latitude_max": 10.881855,
+    "warnings": [
+      "22 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32651",
+      "epsg": 32651,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 262519
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1036896
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1167708
+      },
+      "route": {
+        "exists": true,
+        "bytes": 7324
+      }
+    },
+    "reference_discontinuity_positions": [
+      1213
+    ],
+    "alignment_status_counts": {
+      "aligned": 5046,
+      "ambiguous_geometry": 2638,
+      "ambiguous_geometry|gap_boundary": 30,
+      "ambiguous_geometry|route_discontinuity": 12,
+      "route_discontinuity": 11,
+      "gap_boundary": 2
+    }
+  },
+  "train/00000043": {
+    "observation_count": 2322,
+    "node_count": 109070,
+    "arc_count": 215620,
+    "large_gap_observation_ids": [
+      2216,
+      2223
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 230.0,
+    "one_second_steps": 2316,
+    "timestamp_steps": 2321,
+    "isolated_node_count": 0,
+    "longitude_min": 4.861421,
+    "longitude_max": 5.106271,
+    "latitude_min": 51.894451,
+    "latitude_max": 52.299161,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 73197
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 2072330
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 2576219
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2772
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1639,
+      "ambiguous_geometry": 570,
+      "too_far": 57,
+      "ambiguous_geometry|too_far": 48,
+      "ambiguous_geometry|gap_boundary": 4,
+      "ambiguous_geometry|implausible_progress": 2,
+      "too_far|implausible_progress": 1,
+      "implausible_progress": 1
+    }
+  },
+  "train/00000044": {
+    "observation_count": 546,
+    "node_count": 4386,
+    "arc_count": 9209,
+    "large_gap_observation_ids": [
+      5,
+      231
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 341.0,
+    "one_second_steps": 491,
+    "timestamp_steps": 545,
+    "isolated_node_count": 0,
+    "longitude_min": 39.237245,
+    "longitude_max": 39.275171,
+    "latitude_min": 51.610279,
+    "latitude_max": 51.657122,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 17462
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 87720
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 87229
+      },
+      "route": {
+        "exists": true,
+        "bytes": 605
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 354,
+      "ambiguous_geometry": 188,
+      "gap_boundary": 3,
+      "ambiguous_geometry|gap_boundary": 1
+    }
+  },
+  "train/00000045": {
+    "observation_count": 640,
+    "node_count": 2034,
+    "arc_count": 4335,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 639,
+    "timestamp_steps": 639,
+    "isolated_node_count": 0,
+    "longitude_min": 12.781634,
+    "longitude_max": 12.842308,
+    "latitude_min": 52.004156,
+    "latitude_max": 52.082639,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 20372
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 40680
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 38492
+      },
+      "route": {
+        "exists": true,
+        "bytes": 270
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 480,
+      "ambiguous_geometry": 160
+    }
+  },
+  "train/00000046": {
+    "observation_count": 1401,
+    "node_count": 299,
+    "arc_count": 649,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 22.0,
+    "one_second_steps": 871,
+    "timestamp_steps": 1400,
+    "isolated_node_count": 0,
+    "longitude_min": 2.938989,
+    "longitude_max": 2.970447,
+    "latitude_min": 48.506922,
+    "latitude_max": 48.514766,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 44026
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 5681
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 4700
+      },
+      "route": {
+        "exists": true,
+        "bytes": 253
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1060,
+      "ambiguous_geometry": 341
+    }
+  },
+  "train/00000047": {
+    "observation_count": 1272,
+    "node_count": 18388,
+    "arc_count": 39747,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1271,
+    "timestamp_steps": 1271,
+    "isolated_node_count": 0,
+    "longitude_min": 136.587361,
+    "longitude_max": 136.680687,
+    "latitude_min": 35.036777,
+    "latitude_max": 35.064145,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32653",
+      "epsg": 32653,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 42141
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 386148
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 429909
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1101
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 916,
+      "ambiguous_geometry": 356
+    }
+  },
+  "train/00000048": {
+    "observation_count": 1240,
+    "node_count": 1308,
+    "arc_count": 2592,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 4.0,
+    "one_second_steps": 1238,
+    "timestamp_steps": 1239,
+    "isolated_node_count": 0,
+    "longitude_min": -1.859966,
+    "longitude_max": -1.83316,
+    "latitude_min": 52.957079,
+    "latitude_max": 52.97496,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 39816
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 26160
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 21500
+      },
+      "route": {
+        "exists": true,
+        "bytes": 619
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 714,
+      "ambiguous_geometry": 524,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000050": {
+    "observation_count": 518,
+    "node_count": 2206,
+    "arc_count": 4576,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 517,
+    "timestamp_steps": 517,
+    "isolated_node_count": 0,
+    "longitude_min": 8.733074,
+    "longitude_max": 8.774363,
+    "latitude_min": 48.01645,
+    "latitude_max": 48.032009,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 15950
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 41914
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 41113
+      },
+      "route": {
+        "exists": true,
+        "bytes": 445
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 346,
+      "ambiguous_geometry": 172
+    }
+  },
+  "train/00000051": {
+    "observation_count": 984,
+    "node_count": 4181,
+    "arc_count": 8494,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 977,
+    "timestamp_steps": 983,
+    "isolated_node_count": 0,
+    "longitude_min": 12.535607,
+    "longitude_max": 12.616037,
+    "latitude_min": 41.693268,
+    "latitude_max": 41.726695,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 31382
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 83620
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 80296
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1396
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 519,
+      "ambiguous_geometry": 463,
+      "implausible_progress": 2
+    }
+  },
+  "train/00000053": {
+    "observation_count": 1304,
+    "node_count": 77905,
+    "arc_count": 148707,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 10.0,
+    "one_second_steps": 1298,
+    "timestamp_steps": 1303,
+    "isolated_node_count": 0,
+    "longitude_min": -3.917769,
+    "longitude_max": -3.668134,
+    "latitude_min": 43.340457,
+    "latitude_max": 43.440147,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 41940
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1558100
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1742799
+      },
+      "route": {
+        "exists": true,
+        "bytes": 4266
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 768,
+      "ambiguous_geometry": 536
+    }
+  },
+  "train/00000054": {
+    "observation_count": 19313,
+    "node_count": 63822,
+    "arc_count": 116916,
+    "large_gap_observation_ids": [
+      2153,
+      2193
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 79.0,
+    "one_second_steps": 19282,
+    "timestamp_steps": 19312,
+    "isolated_node_count": 0,
+    "longitude_min": 4.847402,
+    "longitude_max": 4.974103,
+    "latitude_min": 52.286164,
+    "latitude_max": 52.424972,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 626431
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1212618
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1357489
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2512
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry|too_far": 14638,
+      "too_far": 2142,
+      "aligned": 1274,
+      "ambiguous_geometry": 1253,
+      "ambiguous_geometry|gap_boundary": 4,
+      "implausible_progress": 2
+    }
+  },
+  "train/00000055": {
+    "observation_count": 2472,
+    "node_count": 98511,
+    "arc_count": 198961,
+    "large_gap_observation_ids": [
+      1142
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 184.0,
+    "one_second_steps": 2468,
+    "timestamp_steps": 2471,
+    "isolated_node_count": 0,
+    "longitude_min": -0.620796,
+    "longitude_max": -0.426822,
+    "latitude_min": 44.899747,
+    "latitude_max": 45.577873,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 80469
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1970220
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 2345205
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2633
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2178,
+      "ambiguous_geometry": 292,
+      "gap_boundary": 2
+    }
+  },
+  "train/00000057": {
+    "observation_count": 1645,
+    "node_count": 8929,
+    "arc_count": 18777,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 13.0,
+    "one_second_steps": 1639,
+    "timestamp_steps": 1644,
+    "isolated_node_count": 0,
+    "longitude_min": -78.229902,
+    "longitude_max": -78.105062,
+    "latitude_min": 0.305315,
+    "latitude_max": 0.347072,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32617",
+      "epsg": 32617,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 53226
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 178580
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 183016
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1544
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1181,
+      "ambiguous_geometry": 463,
+      "too_far": 1
+    }
+  },
+  "train/00000058": {
+    "observation_count": 599,
+    "node_count": 22367,
+    "arc_count": 39383,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 16.0,
+    "one_second_steps": 540,
+    "timestamp_steps": 598,
+    "isolated_node_count": 0,
+    "longitude_min": 2.331603,
+    "longitude_max": 2.390872,
+    "latitude_min": 51.012564,
+    "latitude_max": 51.025094,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 18462
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 424973
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 432913
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1960
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 334,
+      "aligned": 265
+    }
+  },
+  "train/00000060": {
+    "observation_count": 854,
+    "node_count": 15128,
+    "arc_count": 30077,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 27.0,
+    "one_second_steps": 798,
+    "timestamp_steps": 853,
+    "isolated_node_count": 0,
+    "longitude_min": 18.840944,
+    "longitude_max": 18.964089,
+    "latitude_min": 50.22569,
+    "latitude_max": 50.259886,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32634",
+      "epsg": 32634,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 27358
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 302560
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 316381
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2817
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 532,
+      "aligned": 320,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000061": {
+    "observation_count": 1430,
+    "node_count": 4947,
+    "arc_count": 10339,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 3.0,
+    "one_second_steps": 1425,
+    "timestamp_steps": 1429,
+    "isolated_node_count": 0,
+    "longitude_min": 9.836131,
+    "longitude_max": 9.868019,
+    "latitude_min": 55.855772,
+    "latitude_max": 55.870139,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 44661
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 93993
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 98255
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1405
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 1027,
+      "aligned": 399,
+      "ambiguous_geometry|too_far": 4
+    }
+  },
+  "train/00000062": {
+    "observation_count": 3378,
+    "node_count": 30613,
+    "arc_count": 62836,
+    "large_gap_observation_ids": [
+      2244,
+      2288,
+      2377,
+      2397,
+      2455
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 56.0,
+    "one_second_steps": 3324,
+    "timestamp_steps": 3377,
+    "isolated_node_count": 0,
+    "longitude_min": 60.632952,
+    "longitude_max": 60.803507,
+    "latitude_min": 56.755587,
+    "latitude_max": 56.869674,
+    "warnings": [
+      "5 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32641",
+      "epsg": 32641,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 110441
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 612260
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 709529
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2539
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2422,
+      "ambiguous_geometry": 946,
+      "ambiguous_geometry|gap_boundary": 6,
+      "gap_boundary": 4
+    }
+  },
+  "train/00000063": {
+    "observation_count": 2781,
+    "node_count": 2617,
+    "arc_count": 5553,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 2639,
+    "timestamp_steps": 2780,
+    "isolated_node_count": 0,
+    "longitude_min": 22.440921,
+    "longitude_max": 22.540082,
+    "latitude_min": 44.188878,
+    "latitude_max": 44.236955,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32634",
+      "epsg": 32634,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 90744
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 52340
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 50518
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2737
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1735,
+      "ambiguous_geometry": 1046
+    }
+  },
+  "train/00000064": {
+    "observation_count": 2093,
+    "node_count": 28258,
+    "arc_count": 56986,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 4.0,
+    "one_second_steps": 2020,
+    "timestamp_steps": 2092,
+    "isolated_node_count": 0,
+    "longitude_min": 19.691388,
+    "longitude_max": 19.991873,
+    "latitude_min": 49.507145,
+    "latitude_max": 49.707616,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32634",
+      "epsg": 32634,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 68000
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 565160
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 639121
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3593
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1427,
+      "ambiguous_geometry": 666
+    }
+  },
+  "train/00000066": {
+    "observation_count": 4325,
+    "node_count": 9609,
+    "arc_count": 20071,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 4324,
+    "timestamp_steps": 4324,
+    "isolated_node_count": 0,
+    "longitude_min": 48.602314,
+    "longitude_max": 49.510226,
+    "latitude_min": 53.169655,
+    "latitude_max": 53.398166,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32639",
+      "epsg": 32639,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 141618
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 192180
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 196148
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1610
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 3736,
+      "ambiguous_geometry": 381,
+      "ambiguous_geometry|too_far": 202,
+      "implausible_progress": 6
+    }
+  },
+  "train/00000068": {
+    "observation_count": 747,
+    "node_count": 3537,
+    "arc_count": 7058,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 12.0,
+    "one_second_steps": 726,
+    "timestamp_steps": 746,
+    "isolated_node_count": 0,
+    "longitude_min": -1.69354,
+    "longitude_max": -1.642891,
+    "latitude_min": 53.16712,
+    "latitude_max": 53.21405,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 23821
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 70740
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 66008
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1124
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 411,
+      "ambiguous_geometry": 336
+    }
+  },
+  "train/00000069": {
+    "observation_count": 2067,
+    "node_count": 8556,
+    "arc_count": 17193,
+    "large_gap_observation_ids": [
+      844,
+      986
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2658.0,
+    "one_second_steps": 2044,
+    "timestamp_steps": 2066,
+    "isolated_node_count": 0,
+    "longitude_min": -52.804119,
+    "longitude_max": -52.745174,
+    "latitude_min": 47.523928,
+    "latitude_max": 47.564999,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32622",
+      "epsg": 32622,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 69326
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 179676
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 167859
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2423
+      }
+    },
+    "reference_discontinuity_positions": [
+      154
+    ],
+    "alignment_status_counts": {
+      "aligned": 1037,
+      "ambiguous_geometry": 837,
+      "ambiguous_geometry|repeated_arc_occurrence": 108,
+      "repeated_arc_occurrence": 56,
+      "ambiguous_geometry|route_discontinuity": 13,
+      "route_discontinuity": 12,
+      "ambiguous_geometry|gap_boundary|route_discontinuity": 2,
+      "ambiguous_geometry|gap_boundary": 1,
+      "gap_boundary": 1
+    }
+  },
+  "train/00000070": {
+    "observation_count": 2076,
+    "node_count": 1799,
+    "arc_count": 3776,
+    "large_gap_observation_ids": [
+      999
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 152.0,
+    "one_second_steps": 2010,
+    "timestamp_steps": 2075,
+    "isolated_node_count": 0,
+    "longitude_min": -1.531963,
+    "longitude_max": -1.474393,
+    "latitude_min": 48.681985,
+    "latitude_max": 48.735105,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 67432
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 35980
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 33026
+      },
+      "route": {
+        "exists": true,
+        "bytes": 635
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1472,
+      "ambiguous_geometry": 600,
+      "gap_boundary": 2,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000071": {
+    "observation_count": 850,
+    "node_count": 6265,
+    "arc_count": 14868,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 6.0000000000000036,
+    "one_second_steps": 677,
+    "timestamp_steps": 849,
+    "isolated_node_count": 0,
+    "longitude_min": 27.862405,
+    "longitude_max": 27.954891,
+    "latitude_min": -26.231318,
+    "latitude_max": -26.212329,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32735",
+      "epsg": 32735,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 28146
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 131565
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 144454
+      },
+      "route": {
+        "exists": true,
+        "bytes": 938
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 633,
+      "ambiguous_geometry": 217
+    }
+  },
+  "train/00000072": {
+    "observation_count": 969,
+    "node_count": 3275,
+    "arc_count": 7063,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 968,
+    "timestamp_steps": 968,
+    "isolated_node_count": 0,
+    "longitude_min": 39.565934,
+    "longitude_max": 39.602254,
+    "latitude_min": 50.183508,
+    "latitude_max": 50.201422,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 30900
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 65500
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 65412
+      },
+      "route": {
+        "exists": true,
+        "bytes": 604
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 497,
+      "ambiguous_geometry": 472
+    }
+  },
+  "train/00000074": {
+    "observation_count": 1929,
+    "node_count": 34654,
+    "arc_count": 61055,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 24.0,
+    "one_second_steps": 1859,
+    "timestamp_steps": 1928,
+    "isolated_node_count": 0,
+    "longitude_min": -9.129873,
+    "longitude_max": -8.939147,
+    "latitude_min": 38.696071,
+    "latitude_max": 38.786742,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32629",
+      "epsg": 32629,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 62720
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 693080
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 695624
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1580
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1525,
+      "ambiguous_geometry": 404
+    }
+  },
+  "train/00000075": {
+    "observation_count": 1628,
+    "node_count": 1022,
+    "arc_count": 2124,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 1617,
+    "timestamp_steps": 1627,
+    "isolated_node_count": 0,
+    "longitude_min": 11.963893,
+    "longitude_max": 11.977587,
+    "latitude_min": 56.002182,
+    "latitude_max": 56.012372,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 52623
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 20440
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 16578
+      },
+      "route": {
+        "exists": true,
+        "bytes": 429
+      }
+    },
+    "reference_discontinuity_positions": [
+      32,
+      63
+    ],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 745,
+      "aligned": 688,
+      "repeated_arc_occurrence": 80,
+      "route_discontinuity": 77,
+      "ambiguous_geometry|route_discontinuity": 25,
+      "ambiguous_geometry|repeated_arc_occurrence": 9,
+      "ambiguous_geometry|implausible_progress": 4
+    }
+  },
+  "train/00000078": {
+    "observation_count": 2909,
+    "node_count": 75230,
+    "arc_count": 151458,
+    "large_gap_observation_ids": [
+      2,
+      1320
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 52810.0,
+    "one_second_steps": 2196,
+    "timestamp_steps": 2908,
+    "isolated_node_count": 0,
+    "longitude_min": 3.586272,
+    "longitude_max": 4.19645,
+    "latitude_min": 44.226923,
+    "latitude_max": 44.36736,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 95989
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 1429370
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1772302
+      },
+      "route": {
+        "exists": true,
+        "bytes": 9975
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1570,
+      "ambiguous_geometry": 1335,
+      "ambiguous_geometry|gap_boundary": 2,
+      "gap_boundary": 2
+    }
+  },
+  "train/00000079": {
+    "observation_count": 689,
+    "node_count": 39031,
+    "arc_count": 72116,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 688,
+    "timestamp_steps": 688,
+    "isolated_node_count": 0,
+    "longitude_min": 37.520765,
+    "longitude_max": 37.641395,
+    "latitude_min": 55.756688,
+    "latitude_max": 55.803325,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 21940
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 780620
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 823242
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1021
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 495,
+      "ambiguous_geometry": 190,
+      "implausible_progress": 4
+    }
+  },
+  "train/00000080": {
+    "observation_count": 2510,
+    "node_count": 10014,
+    "arc_count": 18746,
+    "large_gap_observation_ids": [
+      4,
+      278
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 59.0,
+    "one_second_steps": 2476,
+    "timestamp_steps": 2509,
+    "isolated_node_count": 0,
+    "longitude_min": -58.511017,
+    "longitude_max": -58.391737,
+    "latitude_min": -34.640291,
+    "latitude_max": -34.609083,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32721",
+      "epsg": 32721,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 86965
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 220308
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 183081
+      },
+      "route": {
+        "exists": true,
+        "bytes": 745
+      }
+    },
+    "reference_discontinuity_positions": [
+      119
+    ],
+    "alignment_status_counts": {
+      "aligned": 1859,
+      "ambiguous_geometry": 546,
+      "route_discontinuity": 97,
+      "ambiguous_geometry|route_discontinuity": 4,
+      "gap_boundary": 2,
+      "ambiguous_geometry|gap_boundary": 2
+    }
+  },
+  "train/00000081": {
+    "observation_count": 3224,
+    "node_count": 2791,
+    "arc_count": 5048,
+    "large_gap_observation_ids": [
+      866,
+      871,
+      934,
+      937,
+      938,
+      942,
+      966,
+      1033,
+      1073,
+      1074,
+      1078,
+      1083,
+      1086,
+      1091,
+      1095,
+      1258,
+      1275,
+      1277,
+      1279,
+      1292,
+      1520,
+      1633,
+      1643,
+      1691,
+      1713,
+      1728,
+      1820,
+      1840,
+      1841,
+      1861,
+      2436,
+      2455,
+      2643,
+      2644,
+      2708,
+      2711,
+      2777
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 536.0,
+    "one_second_steps": 2320,
+    "timestamp_steps": 3223,
+    "isolated_node_count": 0,
+    "longitude_min": -82.190594,
+    "longitude_max": -82.111754,
+    "latitude_min": 26.444143,
+    "latitude_max": 26.510902,
+    "warnings": [
+      "37 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32617",
+      "epsg": 32617,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 108757
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 58611
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 45987
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3811
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 2298,
+      "aligned": 752,
+      "ambiguous_geometry|too_far": 95,
+      "ambiguous_geometry|gap_boundary": 48,
+      "gap_boundary": 22,
+      "too_far": 9
+    }
+  },
+  "train/00000082": {
+    "observation_count": 4268,
+    "node_count": 15696,
+    "arc_count": 31754,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 4267,
+    "timestamp_steps": 4267,
+    "isolated_node_count": 0,
+    "longitude_min": 30.439792,
+    "longitude_max": 30.736388,
+    "latitude_min": 59.882156,
+    "latitude_max": 59.918147,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32636",
+      "epsg": 32636,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 139737
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 313920
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 335529
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1031
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 3633,
+      "ambiguous_geometry": 631,
+      "implausible_progress": 4
+    }
+  },
+  "train/00000083": {
+    "observation_count": 1507,
+    "node_count": 12907,
+    "arc_count": 25393,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1506,
+    "timestamp_steps": 1506,
+    "isolated_node_count": 0,
+    "longitude_min": 37.818043,
+    "longitude_max": 37.905618,
+    "latitude_min": 55.67088,
+    "latitude_max": 55.711392,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32637",
+      "epsg": 32637,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 48624
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 258140
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 261480
+      },
+      "route": {
+        "exists": true,
+        "bytes": 754
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1075,
+      "ambiguous_geometry": 432
+    }
+  },
+  "train/00000084": {
+    "observation_count": 16031,
+    "node_count": 24898,
+    "arc_count": 50888,
+    "large_gap_observation_ids": [
+      962,
+      4144,
+      12348,
+      13222
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 312.0,
+    "one_second_steps": 15980,
+    "timestamp_steps": 16030,
+    "isolated_node_count": 0,
+    "longitude_min": -87.097364,
+    "longitude_max": -86.741408,
+    "latitude_min": 34.710965,
+    "latitude_max": 34.807972,
+    "warnings": [
+      "4 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32616",
+      "epsg": 32616,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 550391
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 522858
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 564977
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3642
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 11503,
+      "ambiguous_geometry": 4080,
+      "ambiguous_geometry|repeated_arc_occurrence": 210,
+      "ambiguous_geometry|too_far": 191,
+      "too_far": 21,
+      "ambiguous_geometry|implausible_progress": 9,
+      "implausible_progress": 8,
+      "gap_boundary": 6,
+      "ambiguous_geometry|gap_boundary": 2,
+      "ambiguous_geometry|repeated_arc_occurrence|implausible_progress": 1
+    }
+  },
+  "train/00000085": {
+    "observation_count": 1092,
+    "node_count": 690,
+    "arc_count": 1554,
+    "large_gap_observation_ids": [
+      595,
+      602,
+      603,
+      1075
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 70.0,
+    "one_second_steps": 1073,
+    "timestamp_steps": 1091,
+    "isolated_node_count": 0,
+    "longitude_min": 46.307393,
+    "longitude_max": 46.358368,
+    "latitude_min": 53.840983,
+    "latitude_max": 53.860113,
+    "warnings": [
+      "4 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32638",
+      "epsg": 32638,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 35101
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 13800
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 11900
+      },
+      "route": {
+        "exists": true,
+        "bytes": 703
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 655,
+      "ambiguous_geometry": 429,
+      "gap_boundary": 7,
+      "ambiguous_geometry|too_far": 1
+    }
+  },
+  "train/00000086": {
+    "observation_count": 4143,
+    "node_count": 114868,
+    "arc_count": 237656,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 4142,
+    "timestamp_steps": 4142,
+    "isolated_node_count": 0,
+    "longitude_min": 60.251151,
+    "longitude_max": 60.805651,
+    "latitude_min": 56.780114,
+    "latitude_max": 57.272892,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32641",
+      "epsg": 32641,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 135612
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 2297360
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 2866510
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3888
+      }
+    },
+    "reference_discontinuity_positions": [
+      2
+    ],
+    "alignment_status_counts": {
+      "aligned": 3525,
+      "ambiguous_geometry": 615,
+      "ambiguous_geometry|repeated_arc_occurrence": 2,
+      "repeated_arc_occurrence": 1
+    }
+  },
+  "train/00000088": {
+    "observation_count": 876,
+    "node_count": 11373,
+    "arc_count": 24376,
+    "large_gap_observation_ids": [
+      86,
+      226,
+      253,
+      367,
+      565,
+      706,
+      782
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 232.0,
+    "one_second_steps": 858,
+    "timestamp_steps": 875,
+    "isolated_node_count": 0,
+    "longitude_min": 73.406097,
+    "longitude_max": 73.44833,
+    "latitude_min": 61.233324,
+    "latitude_max": 61.267258,
+    "warnings": [
+      "7 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32643",
+      "epsg": 32643,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 28145
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 227460
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 244274
+      },
+      "route": {
+        "exists": true,
+        "bytes": 797
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 475,
+      "ambiguous_geometry": 387,
+      "gap_boundary": 8,
+      "ambiguous_geometry|gap_boundary": 6
+    }
+  },
+  "train/00000089": {
+    "observation_count": 1228,
+    "node_count": 15972,
+    "arc_count": 32823,
+    "large_gap_observation_ids": [
+      211,
+      378,
+      480,
+      603,
+      1028,
+      1179,
+      1212
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 193.0,
+    "one_second_steps": 1171,
+    "timestamp_steps": 1227,
+    "isolated_node_count": 0,
+    "longitude_min": 30.301312,
+    "longitude_max": 30.358962,
+    "latitude_min": 59.989342,
+    "latitude_max": 60.0262,
+    "warnings": [
+      "7 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32636",
+      "epsg": 32636,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 39841
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 319440
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 346899
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1510
+      }
+    },
+    "reference_discontinuity_positions": [
+      193
+    ],
+    "alignment_status_counts": {
+      "aligned": 592,
+      "ambiguous_geometry": 575,
+      "route_discontinuity": 24,
+      "ambiguous_geometry|route_discontinuity": 21,
+      "ambiguous_geometry|gap_boundary": 8,
+      "gap_boundary": 6,
+      "route_discontinuity|implausible_progress": 1,
+      "ambiguous_geometry|route_discontinuity|implausible_progress": 1
+    }
+  },
+  "train/00000090": {
+    "observation_count": 536,
+    "node_count": 4010,
+    "arc_count": 7942,
+    "large_gap_observation_ids": [
+      535
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 153064.0,
+    "one_second_steps": 311,
+    "timestamp_steps": 535,
+    "isolated_node_count": 0,
+    "longitude_min": 10.417463,
+    "longitude_max": 10.465737,
+    "latitude_min": 51.618723,
+    "latitude_max": 51.626741,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32632",
+      "epsg": 32632,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 17093
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 80200
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 74737
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1118
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 302,
+      "aligned": 220,
+      "ambiguous_geometry|repeated_arc_occurrence": 12,
+      "gap_boundary": 2
+    }
+  },
+  "train/00000092": {
+    "observation_count": 7892,
+    "node_count": 26468,
+    "arc_count": 53348,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 7891,
+    "timestamp_steps": 7891,
+    "isolated_node_count": 0,
+    "longitude_min": -3.091551,
+    "longitude_max": -2.724756,
+    "latitude_min": 52.855841,
+    "latitude_max": 52.984839,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 259329
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 529360
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 594531
+      },
+      "route": {
+        "exists": true,
+        "bytes": 12121
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 4183,
+      "ambiguous_geometry": 3446,
+      "repeated_arc_occurrence": 204,
+      "ambiguous_geometry|repeated_arc_occurrence": 53,
+      "implausible_progress": 4,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000093": {
+    "observation_count": 1211,
+    "node_count": 45161,
+    "arc_count": 85122,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 6.0,
+    "one_second_steps": 1181,
+    "timestamp_steps": 1210,
+    "isolated_node_count": 0,
+    "longitude_min": -3.840512,
+    "longitude_max": -3.7033,
+    "latitude_min": 43.349849,
+    "latitude_max": 43.444055,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 38891
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 903220
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 981048
+      },
+      "route": {
+        "exists": true,
+        "bytes": 3236
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 694,
+      "ambiguous_geometry": 515,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000095": {
+    "observation_count": 1551,
+    "node_count": 1888,
+    "arc_count": 3723,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 1545,
+    "timestamp_steps": 1550,
+    "isolated_node_count": 0,
+    "longitude_min": -1.290501,
+    "longitude_max": -1.268332,
+    "latitude_min": 50.736783,
+    "latitude_max": 50.758728,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32630",
+      "epsg": 32630,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 50080
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 37760
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 32672
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1392
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 952,
+      "aligned": 500,
+      "ambiguous_geometry|repeated_arc_occurrence": 97,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "train/00000096": {
+    "observation_count": 3271,
+    "node_count": 16893,
+    "arc_count": 32276,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 3270,
+    "timestamp_steps": 3270,
+    "isolated_node_count": 0,
+    "longitude_min": -95.869374,
+    "longitude_max": -95.331981,
+    "latitude_min": 36.137525,
+    "latitude_max": 36.262757,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32615",
+      "epsg": 32615,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 110107
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 354753
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 341148
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2689
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2330,
+      "ambiguous_geometry": 860,
+      "too_far": 81
+    }
+  },
+  "train/00000097": {
+    "observation_count": 1740,
+    "node_count": 23566,
+    "arc_count": 48503,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 1723,
+    "timestamp_steps": 1739,
+    "isolated_node_count": 0,
+    "longitude_min": 11.864978,
+    "longitude_max": 12.220592,
+    "latitude_min": 55.94872,
+    "latitude_max": 56.05897,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 56324
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 471320
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 534894
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2383
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1320,
+      "ambiguous_geometry": 420
+    }
+  },
+  "train/00000098": {
+    "observation_count": 5584,
+    "node_count": 43440,
+    "arc_count": 88137,
+    "large_gap_observation_ids": [
+      3268,
+      5583
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 50.0,
+    "one_second_steps": 4315,
+    "timestamp_steps": 5583,
+    "isolated_node_count": 0,
+    "longitude_min": -51.669044,
+    "longitude_max": -51.187225,
+    "latitude_min": -29.701688,
+    "latitude_max": -29.391487,
+    "warnings": [
+      "2 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32722",
+      "epsg": 32722,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 194487
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 955680
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 1012774
+      },
+      "route": {
+        "exists": true,
+        "bytes": 5838
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 4481,
+      "ambiguous_geometry": 1096,
+      "ambiguous_geometry|too_far": 3,
+      "ambiguous_geometry|too_far|gap_boundary": 2,
+      "ambiguous_geometry|gap_boundary": 2
+    }
+  },
+  "train/00000099": {
+    "observation_count": 2322,
+    "node_count": 34252,
+    "arc_count": 72870,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 25.0,
+    "one_second_steps": 2313,
+    "timestamp_steps": 2321,
+    "isolated_node_count": 0,
+    "longitude_min": 135.798398,
+    "longitude_max": 135.970535,
+    "latitude_min": 34.861312,
+    "latitude_max": 34.933419,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32653",
+      "epsg": 32653,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 77848
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 719292
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 826029
+      },
+      "route": {
+        "exists": true,
+        "bytes": 4759
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 1296,
+      "aligned": 1005,
+      "too_far": 10,
+      "ambiguous_geometry|implausible_progress": 6,
+      "ambiguous_geometry|too_far": 5
+    }
+  },
+  "student_test/00000000": {
+    "observation_count": 2503,
+    "node_count": 8542,
+    "arc_count": 18196,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 2501,
+    "timestamp_steps": 2502,
+    "isolated_node_count": 0,
+    "longitude_min": 54.248491,
+    "longitude_max": 54.963519,
+    "latitude_min": 56.08056,
+    "latitude_max": 56.254566,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32640",
+      "epsg": 32640,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 81492
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 170840
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 176989
+      },
+      "route": {
+        "exists": true,
+        "bytes": 881
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2236,
+      "ambiguous_geometry": 267
+    }
+  },
+  "student_test/00000007": {
+    "observation_count": 1354,
+    "node_count": 2061,
+    "arc_count": 4369,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 1353,
+    "timestamp_steps": 1353,
+    "isolated_node_count": 0,
+    "longitude_min": 77.122052,
+    "longitude_max": 77.271115,
+    "latitude_min": 43.388762,
+    "latitude_max": 43.496413,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32643",
+      "epsg": 32643,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 43575
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 41220
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 38998
+      },
+      "route": {
+        "exists": true,
+        "bytes": 486
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 1232,
+      "ambiguous_geometry": 122
+    }
+  },
+  "student_test/00000009": {
+    "observation_count": 1049,
+    "node_count": 6745,
+    "arc_count": 13106,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 1047,
+    "timestamp_steps": 1048,
+    "isolated_node_count": 0,
+    "longitude_min": 13.631991,
+    "longitude_max": 13.70662,
+    "latitude_min": 42.645529,
+    "latitude_max": 42.662443,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32633",
+      "epsg": 32633,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 33513
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 134900
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 126694
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2217
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 584,
+      "aligned": 459,
+      "ambiguous_geometry|implausible_progress": 5,
+      "implausible_progress": 1
+    }
+  },
+  "student_test/00000040": {
+    "observation_count": 2995,
+    "node_count": 12945,
+    "arc_count": 27026,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 2994,
+    "timestamp_steps": 2994,
+    "isolated_node_count": 0,
+    "longitude_min": 61.069448,
+    "longitude_max": 61.292663,
+    "latitude_min": 55.175283,
+    "latitude_max": 55.416496,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32641",
+      "epsg": 32641,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 97728
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 258900
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 277927
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1506
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2501,
+      "ambiguous_geometry": 494
+    }
+  },
+  "student_test/00000052": {
+    "observation_count": 262,
+    "node_count": 1770,
+    "arc_count": 3577,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 2.0,
+    "one_second_steps": 257,
+    "timestamp_steps": 261,
+    "isolated_node_count": 0,
+    "longitude_min": 35.858383,
+    "longitude_max": 35.896431,
+    "latitude_min": 56.795125,
+    "latitude_max": 56.827472,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32636",
+      "epsg": 32636,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 8278
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 35400
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 30902
+      },
+      "route": {
+        "exists": true,
+        "bytes": 474
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 186,
+      "ambiguous_geometry": 76
+    }
+  },
+  "student_test/00000056": {
+    "observation_count": 3958,
+    "node_count": 14759,
+    "arc_count": 27631,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 3.0,
+    "one_second_steps": 3916,
+    "timestamp_steps": 3957,
+    "isolated_node_count": 0,
+    "longitude_min": -93.424337,
+    "longitude_max": -93.348525,
+    "latitude_min": 44.836021,
+    "latitude_max": 44.8734,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32615",
+      "epsg": 32615,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 133479
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 309939
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 288046
+      },
+      "route": {
+        "exists": true,
+        "bytes": 7628
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "ambiguous_geometry": 1725,
+      "repeated_arc_occurrence": 1010,
+      "aligned": 697,
+      "ambiguous_geometry|repeated_arc_occurrence": 505,
+      "ambiguous_geometry|too_far": 21
+    }
+  },
+  "student_test/00000065": {
+    "observation_count": 768,
+    "node_count": 6448,
+    "arc_count": 13184,
+    "large_gap_observation_ids": [
+      115
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 210.0,
+    "one_second_steps": 756,
+    "timestamp_steps": 767,
+    "isolated_node_count": 0,
+    "longitude_min": 49.263178,
+    "longitude_max": 49.329869,
+    "latitude_min": 53.512628,
+    "latitude_max": 53.53894,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32639",
+      "epsg": 32639,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 24512
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 128960
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 128022
+      },
+      "route": {
+        "exists": true,
+        "bytes": 701
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 386,
+      "ambiguous_geometry": 380,
+      "ambiguous_geometry|gap_boundary": 2
+    }
+  },
+  "student_test/00000076": {
+    "observation_count": 1486,
+    "node_count": 26635,
+    "arc_count": 56027,
+    "large_gap_observation_ids": [
+      683
+    ],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 32.0,
+    "one_second_steps": 1279,
+    "timestamp_steps": 1485,
+    "isolated_node_count": 0,
+    "longitude_min": 43.961393,
+    "longitude_max": 44.033831,
+    "latitude_min": 56.240407,
+    "latitude_max": 56.328848,
+    "warnings": [
+      "1 timestamp gaps exceed 30 seconds"
+    ],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32638",
+      "epsg": 32638,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 48392
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 532700
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 624245
+      },
+      "route": {
+        "exists": true,
+        "bytes": 2098
+      }
+    },
+    "reference_discontinuity_positions": [
+      13
+    ],
+    "alignment_status_counts": {
+      "aligned": 797,
+      "ambiguous_geometry": 682,
+      "ambiguous_geometry|route_discontinuity": 3,
+      "route_discontinuity": 2,
+      "ambiguous_geometry|gap_boundary": 2
+    }
+  },
+  "student_test/00000077": {
+    "observation_count": 3911,
+    "node_count": 4424,
+    "arc_count": 9622,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 3910,
+    "timestamp_steps": 3910,
+    "isolated_node_count": 0,
+    "longitude_min": 50.788938,
+    "longitude_max": 50.841452,
+    "latitude_min": 61.639754,
+    "latitude_max": 61.69959,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32639",
+      "epsg": 32639,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 127956
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 88480
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 91058
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1258
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 2108,
+      "ambiguous_geometry": 1797,
+      "implausible_progress": 4,
+      "ambiguous_geometry|implausible_progress": 2
+    }
+  },
+  "student_test/00000091": {
+    "observation_count": 874,
+    "node_count": 6360,
+    "arc_count": 12303,
+    "large_gap_observation_ids": [],
+    "nonpositive_time_observation_ids": [],
+    "max_gap_s": 1.0,
+    "one_second_steps": 873,
+    "timestamp_steps": 873,
+    "isolated_node_count": 0,
+    "longitude_min": 2.411206,
+    "longitude_max": 2.443703,
+    "latitude_min": 47.053146,
+    "latitude_max": 47.099623,
+    "warnings": [],
+    "crs": {
+      "source": "EPSG:4326",
+      "projected": "EPSG:32631",
+      "epsg": 32631,
+      "units": "metre",
+      "always_xy": true,
+      "selection": "UTM zone from median observed longitude/latitude"
+    },
+    "files": {
+      "track": {
+        "exists": true,
+        "bytes": 26986
+      },
+      "nodes": {
+        "exists": true,
+        "bytes": 120840
+      },
+      "arcs": {
+        "exists": true,
+        "bytes": 119276
+      },
+      "route": {
+        "exists": true,
+        "bytes": 1095
+      }
+    },
+    "reference_discontinuity_positions": [],
+    "alignment_status_counts": {
+      "aligned": 575,
+      "ambiguous_geometry": 299
+    }
+  }
+}

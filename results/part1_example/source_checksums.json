@@ -1,0 +1,18 @@
+[
+  {
+    "path": "train/00000001/00000001.track",
+    "sha256": "72b37792edb378ee758b78d28f006d476acb203e0600827300f2e5fab757abb0"
+  },
+  {
+    "path": "train/00000001/00000001.nodes",
+    "sha256": "32c8209e7ee82ffea8a1109cc8d6e1b4376aa0887fc0f7f3385a73a52b03d4f6"
+  },
+  {
+    "path": "train/00000001/00000001.arcs",
+    "sha256": "fad1b6878fef1e8790426d73e6191ee9096d94973c7e015c3d7beac78494a1ed"
+  },
+  {
+    "path": "train/00000001/00000001.route",
+    "sha256": "e09683bf22221c0bb1ae356759cdf58d8b614fd883fd38535f1efbc4873ec874"
+  }
+]

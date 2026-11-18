@@ -1,0 +1,2 @@
+partition,trip_id,observations,nodes,arcs,reference_entries,reference_discontinuities,max_gap_s,large_gaps,nonpositive_time_steps,isolated_nodes,projected_crs,track_bytes,nodes_bytes,arcs_bytes,route_bytes,provisional_aligned,provisional_flagged,elapsed_s
+train,00000001,1315,88809,165790,525,0,16.0,0,0,0,EPSG:32632,40975,1687371,1948474,3119,1033,282,0.3505
